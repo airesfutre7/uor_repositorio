@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"
+      dir="ltr"
+    >
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Sign Up</title>
+
+        <!-- Prevent the demo from appearing in search engines -->
+        <meta name="robots"
+              content="noindex">
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+              rel="stylesheet">
+
+        <!-- Preloader -->
+        <link type="text/css"
+              href="{% static 'home/public/vendor/spinkit.css' %}"
+              rel="stylesheet">
+
+        <!-- Perfect Scrollbar -->
+        <link type="text/css"
+              href="{% static 'home/public/vendor/perfect-scrollbar.css' %}"
+              rel="stylesheet">
+
+        <!-- Material Design Icons -->
+        <link type="text/css"
+              href="{% static 'home/public/css/material-icons.css' %}"
+              rel="stylesheet">
+
+        <!-- Font Awesome Icons -->
+        <link type="text/css"
+              href="{% static 'home/public/css/fontawesome.css' %}"
+              rel="stylesheet">
+
+        <!-- Preloader -->
+        <link type="text/css"
+              href="{% static 'home/public/css/preloader.css' %}"
+              rel="stylesheet">
+
+        <!-- App CSS -->
+        <link type="text/css"
+              href="{% static 'home/public/css/app.css' %}"
+              rel="stylesheet">
+
+        <!-- Dark Mode CSS -->
+        <link type="text/css"
+              href="{% static 'home/public/css/dark.css' %}"
+              rel="stylesheet">
+
+    </head>
+
+    <body class="layout-app ">
+
+        <div class="preloader">
+            <div class="sk-chase">
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+            </div>
+
+            <!-- <div class="sk-bounce">
+    <div class="sk-bounce-dot"></div>
+    <div class="sk-bounce-dot"></div>
+  </div> -->
+
+            <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+        </div>
+
+        <!-- Drawer Layout -->
+
+        <div class="mdk-drawer-layout js-mdk-drawer-layout"
+             data-push
+             data-responsive-width="992px">
+            <div class="mdk-drawer-layout__content page-content">
+
+                <!-- Header -->
+
+                <div class="navbar navbar-expand navbar-dark border-bottom-2"
+                     id="default-navbar"
+                     data-primary>
+
+                    <!-- Navbar toggler -->
+                    <button class="navbar-toggler w-auto mr-16pt d-block d-lg-none rounded-0"
+                            type="button"
+                            data-toggle="sidebar">
+                        <span class="material-icons">short_text</span>
+                    </button>
+
+                    <!-- Navbar Brand -->
+                    <a href="index.html"
+                       class="navbar-brand mr-16pt d-lg-none">
+                        <!-- <img class="navbar-brand-icon" src="../../public/images/logo/white-100@2x.png" width="30" alt="Luma"> -->
+
+                        <span class="avatar avatar-sm navbar-brand-icon mr-0 mr-lg-8pt">
+
+                            <span class="avatar-title rounded bg-primary"><img src="../../public/images/illustration/student/128/white.svg"
+                                     alt="logo"
+                                     class="img-fluid" /></span>
+
+                        </span>
+
+                        <span class="d-none d-lg-block">Luma</span>
+                    </a>
+
+                  
+                    
+                </div>
+                
+                <!-- // END Header -->
+
+                <!-- BEFORE Page Content -->
+
+                <!-- // END BEFORE Page Content -->
+
+                <!-- Page Content -->
+
+                <div class="py-32pt navbar-submenu">
+                    <div class="container page__container">
+                         <div class="page-separator justify-content-center m-0">
+                    <div class="page-separator__text">Login</div>
+                </div>
+                    </div>
+                </div>
+
+                <div class="page-section container page__container">
+                    <div class="col-lg-10 p-0 mx-auto">
+                        <div class="row">
+                            <div class="col-md-6 mb-24pt mb-md-0">
+                                <form action="signup-payment.html">
+                                    <div class="form-group">
+                                        <label class="form-label"
+                                               for="email">Your email:</label>
+                                        <input id="email"
+                                               type="email"
+                                               class="form-control"
+                                               placeholder="Your email address ...">
+                                    </div>
+                                    <div class="form-group mb-24pt">
+                                        <label class="form-label"
+                                               for="password">Password:</label>
+                                        <input id="password"
+                                               type="password"
+                                               class="form-control"
+                                               placeholder="Your password ...">
+                                    </div>
+                                    <button class="btn btn-primary">Login</button>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-0">
+                                    <div class="card-body-login">
+                                       
+                                        <img class="brand-icon" src="{% static 'home/public/images/uor_logo.png' %}" width="300" alt="Luma">
+                                                
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- // END Page Content -->
+
+                <!-- Footer -->
+
+               <div class=" border-top-2 mt-auto">
+                    <div class="container page__container page-section d-flex flex-column">
+                        <p class="text-70 brand mb-24pt">
+                            <img class="brand-icon"
+                                 src="{% static 'home/public/images/logo/black-70@2x.png' %}"
+                                 width="30"
+                                 alt="Luma"> UÓR
+                        </p>
+                        <p class="mb-8pt d-flex">
+                            <a href=""
+                               class="text-70 text-underline mr-8pt small">Terms</a>
+                            <a href=""
+                               class="text-70 text-underline small">Privacy policy</a>
+                        </p>
+                        <p class="text-50 small mt-n1 mb-0">Copyright 2015 &copy; All rights reserved.</p>
+                    </div>
+                </div>
+
+                <!-- // END Footer -->
+
+            </div>
+
+            <!-- // END drawer-layout__content -->
+
+            <!-- Drawer -->
+
+
+
+            <!-- // END Drawer -->
+
+        </div>
+
+        <!-- // END Drawer Layout -->
+
+        <!-- jQuery -->
+        <script src="{% static 'home/public/vendor/jquery.min.js' %}"></script>
+
+        <!-- Bootstrap -->
+        <script src="{% static 'home/public/vendor/popper.min.js' %}"></script>
+        <script src="{% static 'home/public/vendor/bootstrap.min.js' %}"></script>
+
+        <!-- Perfect Scrollbar -->
+        <script src="{% static 'home/public/vendor/perfect-scrollbar.min.js' %}"></script>
+
+        <!-- DOM Factory -->
+        <script src="{% static 'home/public/vendor/dom-factory.js' %}"></script>
+
+        <!-- MDK -->
+        <script src="{% static 'home/public/vendor/material-design-kit.js' %}"></script>
+
+        <!-- App JS -->
+        <script src="{% static 'home/public/js/app.js' %}"></script>
+
+        <!-- Preloader -->
+        <script src="{% static 'home/public/js/preloader.js' %}"></script>
+
+    </body>
+
+</html>

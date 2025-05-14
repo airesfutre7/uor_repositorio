@@ -54,4 +54,7 @@ django-admin --version
 cd \repositorio\
 python manage.py runserver
 
-```  
+```
+
+-  Para acessar o projecto precisa ir ao navegador (Google Chrome, Firefox ) e colocar o endereço URL: `127.0.0.1:8000` 
+

@@ -8,13 +8,20 @@ Para executar o projecto precisa seguir os passos abaixo:
 
 ## 1º Passo:
 
-Instalar a ultima versão do Python
-
-vai ao site oficial: `https://www.python.org/downloads`
+- Download do projecto
+  
+```bash
+clone 
+```
+  
 
 ## 2º Passo:
 
 # Instalar a ultima versão da Framework Django
+
+ - Instalar a ultima versão do Python
+
+vai ao site oficial: `https://www.python.org/downloads`
 
  - Verificar se python e pip estão instalados ( Abrir o terminal e digitar os comandos abaixo )
 

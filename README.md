@@ -26,6 +26,7 @@ pip --version
 -  Criar um ambiente virtual para evitar conflitos entre projectos
 
   ```bash
+cd \repositorio\
 python -m venv repositorio-env
 
 ```
@@ -33,7 +34,6 @@ python -m venv repositorio-env
 -  Activar o ambiente virtual
 
   ```bash
-cd \repositorio_UOR\repositorio
 source repositorio/bin/activate
 
 ```
@@ -51,7 +51,7 @@ django-admin --version
 # Executar o projecto no servidor local:
 
   ```bash
-cd \repositorio_UOR\repositorio
+cd \repositorio\
 python manage.py runserver
 
 ```  

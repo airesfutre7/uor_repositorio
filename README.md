@@ -11,10 +11,9 @@ Para executar o projecto precisa seguir os passos abaixo:
 - Download do projecto
   
 ```bash
-clone 
+clone https://github.com/airesfutre7/uor_repositorio.git
 ```
   
-
 ## 2º Passo:
 
 # Instalar a ultima versão da Framework Django

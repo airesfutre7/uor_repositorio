@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en"
       dir="ltr"
@@ -18,6 +19,9 @@
 
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
               rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
         <!-- Preloader -->
         <link type="text/css"
@@ -116,6 +120,8 @@
                     
                 </div>
                 
+                        
+                 
                 <!-- // END Header -->
 
                 <!-- BEFORE Page Content -->
@@ -123,27 +129,42 @@
                 <!-- // END BEFORE Page Content -->
 
                 <!-- Page Content -->
-
+               
                 <div class="py-32pt navbar-submenu">
                     <div class="container page__container">
                          <div class="page-separator justify-content-center m-0">
-                    <div class="page-separator__text">Login</div>
+                    <div class="page-separator__text">Signup</div>
                 </div>
                     </div>
                 </div>
+
+               
 
                 <div class="page-section container page__container">
                     <div class="col-lg-10 p-0 mx-auto">
                         <div class="row">
                             <div class="col-md-6 mb-24pt mb-md-0">
-                                <form action="signup-payment.html">
-                                    <div class="form-group">
+                                <form method="POST" >
+                                    {% csrf_token %}
+
+                                    {{ form|crispy }}
+                                   
+
+                                    <!--<div class="form-group">
                                         <label class="form-label"
-                                               for="email">Your email:</label>
+                                               for="email">Nome:</label>
                                         <input id="email"
                                                type="email"
                                                class="form-control"
-                                               placeholder="Your email address ...">
+                                               placeholder="Primeiro e ultimo nome ...">
+                                    </div>
+                                     <div class="form-group">
+                                        <label class="form-label"
+                                               for="email">Email:</label>
+                                        <input id="email"
+                                               type="email"
+                                               class="form-control"
+                                               placeholder="Email ...">
                                     </div>
                                     <div class="form-group mb-24pt">
                                         <label class="form-label"
@@ -151,9 +172,21 @@
                                         <input id="password"
                                                type="password"
                                                class="form-control"
-                                               placeholder="Your password ...">
+                                               placeholder="password ...">
                                     </div>
-                                    <button class="btn btn-primary">Login</button>
+
+                                    <div class="form-group mb-24pt">
+                                        <label class="form-label"
+                                               for="password">Confirm Password:</label>
+                                        <input id="password"
+                                               type="password"
+                                               class="form-control"
+                                               placeholder="Confirm password ...">
+                                    </div>-->
+
+
+
+                                    <button class="btn btn-primary" type="submit">Criar Conta</button>
                                 </form>
                             </div>
                             <div class="col-md-6">
@@ -229,6 +262,8 @@
 
         <!-- Preloader -->
         <script src="{% static 'home/public/js/preloader.js' %}"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
     </body>
 

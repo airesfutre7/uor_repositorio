@@ -8,13 +8,8 @@ import os
 # Create your views here.
 
 def home(request):
+
     return render(request,'home/index.html')
-
-def login(request):
-    return render(request,'home/login.html')
-
-def signup(request):
-    return render(request,'home/signup.html')
 
 def artigos(request):
     return render(request,'home/artigos.html')

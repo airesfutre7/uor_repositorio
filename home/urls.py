@@ -1,12 +1,10 @@
 from django.urls import path
 from . import views
-
-from django.shortcuts import render
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path("login/", views.login, name="login"),
-    path("signup/", views.signup, name="signup"),
     path("artigos/", views.artigos, name="artigos"),
     path("monografias/", views.monografias, name="monografias"),
     path("dissertacao/", views.dissertacao, name="dissertacao"),
@@ -18,3 +16,5 @@ urlpatterns = [
 
   
 ]
+
+    

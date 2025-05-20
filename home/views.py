@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from users.models import Perfil
 from django.http import FileResponse
+from django.contrib import messages
 import os
 
 # Create your views here.
@@ -15,7 +16,19 @@ def artigos(request):
     return render(request,'home/artigos.html')
 
 def monografias(request):
-    return render(request,'home/monografias.html')
+    try:
+        perfil = Perfil.objects.get(user=request.user)
+        monografias = perfil.monografias.all()
+        context = {
+            'perfil': perfil,
+            'monografias': monografias,
+        }
+    except Perfil.DoesNotExist:
+        messages.error(request, "Perfil não encontrado.")
+        return redirect('home')  
+    
+    return render(request, 'home/monografias.html', context)
+
 
 def dissertacao(request):
     return render(request,'home/dissertacao.html')

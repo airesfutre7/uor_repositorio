@@ -45,10 +45,19 @@ def validate_pdf(file):
             raise ValidationError('Invalid file type.')
     
 class Monografia(models.Model):
+
+    STATUS_CHOICES = [
+        ('no', 'empty'),
+        ('eng', 'Faculdade de Engenharia'),
+        ('dir', 'Faculdade de Direito'),
+        ('ges', 'Faculdade de Gestão'),
+        ('econ', 'Faculdade de Economia'),
+    ]
     
     autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='monografias')
     titulo = models.CharField(max_length=255)
     resumo = models.TextField()
+    faculdade = models.CharField(max_length=20, choices=STATUS_CHOICES, default='no')
     ficheiro = models.FileField(upload_to='monografias/', validators=[validate_pdf])
     capa = models.ImageField(upload_to='monografias/capas/', null=True, blank=True)  # The preview image
     date = models.DateTimeField(default=timezone.now)
@@ -57,11 +66,23 @@ class Monografia(models.Model):
     def __str__(self):
         return self.titulo
     
+   
+    
 class Tese(models.Model):
     
+    
+    STATUS_CHOICES = [
+        ('no', 'empty'),
+        ('eng', 'Faculdade de Engenharia'),
+        ('dir', 'Faculdade de Direito'),
+        ('ges', 'Faculdade de Gestão'),
+        ('econ', 'Faculdade de Economia'),
+    ]
+
     autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='tese')
     titulo = models.CharField(max_length=255)
     resumo = models.TextField()
+    faculdade = models.CharField(max_length=20, choices=STATUS_CHOICES, default='no')
     ficheiro = models.FileField(upload_to='tese/', validators=[validate_pdf])
     capa = models.ImageField(upload_to='tese/capas/', null=True, blank=True)  # The preview image
     date = models.DateTimeField(default=timezone.now)
@@ -69,13 +90,21 @@ class Tese(models.Model):
 
     def __str__(self):
         return self.titulo
-    
 
 class Dissertacao(models.Model):
+
+    STATUS_CHOICES = [
+        ('no', 'empty'),
+        ('eng', 'Faculdade de Engenharia'),
+        ('dir', 'Faculdade de Direito'),
+        ('ges', 'Faculdade de Gestão'),
+        ('econ', 'Faculdade de Economia'),
+    ]
     
     autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='dissertação')
     titulo = models.CharField(max_length=255)
     resumo = models.TextField()
+    faculdade = models.CharField(max_length=20, choices=STATUS_CHOICES, default='no')
     ficheiro = models.FileField(upload_to='dissertação/', validators=[validate_pdf])
     capa = models.ImageField(upload_to='dissertação/capas/', null=True, blank=True)  # The preview image
     date = models.DateTimeField(default=timezone.now)
@@ -85,10 +114,19 @@ class Dissertacao(models.Model):
         return self.titulo
     
 class Artigo(models.Model):
+
+    STATUS_CHOICES = [
+        ('no', 'empty'),
+        ('eng', 'Faculdade de Engenharia'),
+        ('dir', 'Faculdade de Direito'),
+        ('ges', 'Faculdade de Gestão'),
+        ('econ', 'Faculdade de Economia'),
+    ]
     
     autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='artigo')
     titulo = models.CharField(max_length=255)
     resumo = models.TextField()
+    faculdade = models.CharField(max_length=20, choices=STATUS_CHOICES, default='no')
     ficheiro = models.FileField(upload_to='artigo/', validators=[validate_pdf])
     capa = models.ImageField(upload_to='artigo/capas/', null=True, blank=True)  # The preview image
     date = models.DateTimeField(default=timezone.now)
@@ -98,10 +136,19 @@ class Artigo(models.Model):
         return self.titulo
     
 class Livro(models.Model):
+
+    STATUS_CHOICES = [
+        ('no', 'empty'),
+        ('eng', 'Faculdade de Engenharia'),
+        ('dir', 'Faculdade de Direito'),
+        ('ges', 'Faculdade de Gestão'),
+        ('econ', 'Faculdade de Economia'),
+    ]
     
     autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='livro')
     titulo = models.CharField(max_length=255)
     resumo = models.TextField()
+    faculdade = models.CharField(max_length=20, choices=STATUS_CHOICES, default='no')
     ficheiro = models.FileField(upload_to='livro/', validators=[validate_pdf])
     capa = models.ImageField(upload_to='livro/capas/', null=True, blank=True)  # The preview image
     date = models.DateTimeField(default=timezone.now)

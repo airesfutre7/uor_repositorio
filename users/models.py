@@ -4,6 +4,7 @@ from PIL import Image
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 import mimetypes
+
 # Create your models here.
 
 

@@ -56,3 +56,56 @@ class Monografia(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+class Tese(models.Model):
+    
+    autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='tese')
+    titulo = models.CharField(max_length=255)
+    resumo = models.TextField()
+    ficheiro = models.FileField(upload_to='tese/', validators=[validate_pdf])
+    capa = models.ImageField(upload_to='tese/capas/', null=True, blank=True)  # The preview image
+    date = models.DateTimeField(default=timezone.now)
+
+
+    def __str__(self):
+        return self.titulo
+    
+
+class Dissertacao(models.Model):
+    
+    autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='dissertação')
+    titulo = models.CharField(max_length=255)
+    resumo = models.TextField()
+    ficheiro = models.FileField(upload_to='dissertação/', validators=[validate_pdf])
+    capa = models.ImageField(upload_to='dissertação/capas/', null=True, blank=True)  # The preview image
+    date = models.DateTimeField(default=timezone.now)
+
+
+    def __str__(self):
+        return self.titulo
+    
+class Artigo(models.Model):
+    
+    autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='artigo')
+    titulo = models.CharField(max_length=255)
+    resumo = models.TextField()
+    ficheiro = models.FileField(upload_to='artigo/', validators=[validate_pdf])
+    capa = models.ImageField(upload_to='artigo/capas/', null=True, blank=True)  # The preview image
+    date = models.DateTimeField(default=timezone.now)
+
+
+    def __str__(self):
+        return self.titulo
+    
+class Livro(models.Model):
+    
+    autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='livro')
+    titulo = models.CharField(max_length=255)
+    resumo = models.TextField()
+    ficheiro = models.FileField(upload_to='livro/', validators=[validate_pdf])
+    capa = models.ImageField(upload_to='livro/capas/', null=True, blank=True)  # The preview image
+    date = models.DateTimeField(default=timezone.now)
+
+
+    def __str__(self):
+        return self.titulo

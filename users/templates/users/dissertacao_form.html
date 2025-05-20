@@ -123,27 +123,15 @@
 
                 <!-- // END Header -->
 
-                {% if form.errors %}
-                    <div class="alert alert-danger">
-                        {{ form.non_field_errors }}
-                        {% for field in form %}
-                            <div>
-                                {{ field.label }}: {{ field.errors }}
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-
-
                 <div class="pt-32pt">
                     <div class="container page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
                         <div class="flex d-flex flex-column flex-sm-row align-items-center">
 
                             <div class="mb-24pt mb-sm-0 mr-sm-24pt">
-                                <h2 class="mb-0">Monografia</h2>
+                                <h2 class="mb-0">Dissertação</h2>
 
                                 <ol class="breadcrumb p-0 m-0">
-                                    <li class="breadcrumb-item"><a href="">Carregar Monografia</a></li>
+                                    <li class="breadcrumb-item"><a href="">Carregar Dissertação</a></li>
 
                                     <li class="breadcrumb-item active">
 
@@ -175,47 +163,71 @@
                             <div class="row">
                                 <div class="col-md-6 mb-24pt mb-md-0">
                                     <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
 
-                                        {% csrf_token %}
+                                    <!--{{form.user}}-->
 
-                                        <!--{{form.user}}-->
+                                     <div class="form-group">
+                                        <label class="form-label">Titulo</label>
+                                       {{ form.titulo }}
+                                        <!--<small class="form-text text-muted">Your profile name will be used as part of your public profile URL address.</small> -->
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label class="form-label">Titulo</label>
-                                        {{ form.titulo }}
-                                            <!--<small class="form-text text-muted">Your profile name will be used as part of your public profile URL address.</small> -->
-                                        </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Resumo</label>
+                                       {{ form.resumo }}
+                                        <!--<small class="form-text text-muted">Your profile name will be used as part of your public profile URL address.</small> -->
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label class="form-label">Resumo</label>
-                                        {{ form.resumo }}
-                                            <!--<small class="form-text text-muted">Your profile name will be used as part of your public profile URL address.</small> -->
-                                        </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Ficheiro</label>
+                                        <div class="media align-items-center">
 
-                                        <div class="form-group">
-                                            <label class="form-label">Ficheiro</label>
-                                            <div class="media align-items-center">
+                                            
+                                            <div class="media-body">
+                                                <div class="custom-file">
+                                                    <!-- File input -->
+                                                    {{ form.ficheiro }}
+                                                    {% if perfil.dissertacao %}
+                                                        <label class="custom-file-label" for="inputGroupFile01">{{ perfil.dissertacao.ficheiro.name }}</label>
+                                                    {% else %}
+                                                         <label class="custom-file-label" for="inputGroupFile01" for="id_ficheiro">Escolher ficheiro...</label>
+                                                    {% endif %}
 
+                                                    <!--<label class="custom-file-label" for="inputGroupFile01">{{ perfil.monografia.ficheiro }}</label>-->
                                                 
-                                                <div class="media-body">
-                                                    <div class="custom-file">
-                                                        <!-- File input -->
-                                                        {{ form.ficheiro }}
-                                                        {% if perfil.monografia %}
-                                                            <label class="custom-file-label" for="inputGroupFile01" for="id_ficheiro">{{ perfil.monografia.ficheiro.name }}</label>
-                                                        {% else %}
-                                                            <label class="custom-file-label" for="inputGroupFile01" for="id_ficheiro">Escolher ficheiro...</label>
-                                                        {% endif %}
-
-                                                        <!--<label class="custom-file-label" for="inputGroupFile01">{{ perfil.monografia.ficheiro }}</label>-->
-                                                    
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        
-                                        <button class="btn btn-primary" type="submit">Guardar</button>
-                                    </form>
+                                    </div>
+
+
+                                    <!-- <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox"
+                                                class="custom-control-input"
+                                                checked
+                                                id="customCheck1">
+                                            <label class="custom-control-label"
+                                                for="customCheck1">Display your real name on your profile</label>
+                                            <small class="form-text text-muted">If unchecked, your profile name will be displayed instead of your full name.</small> 
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox"
+                                                class="custom-control-input"
+                                                checked
+                                                id="customCheck2">
+                                            <label class="custom-control-label"
+                                                for="customCheck2">Allow everyone to see your profile</label>
+                                            <small class="form-text text-muted">If unchecked, your profile will be private and no one except you will be able to view it.</small>
+                                        </div>
+                                    </div>-->
+                                    
+                                    <button class="btn btn-primary" type="submit">Guardar</button>
+                                </form>
 
                                     
                                 </div>

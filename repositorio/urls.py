@@ -28,6 +28,10 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
     path("edit_perfil/", users_view.edit_perfil, name='edit_perfil'),
     path("monografia_form/", users_view.monografia, name='monografia_form'),
+    path("tese_form/", users_view.tese, name='tese_form'),
+    path("dissertacao_form/", users_view.dissertacao, name='dissertacao_form'),
+    path("artigo_form/", users_view.artigo, name='artigo_form'),
+    path("livro_form/", users_view.livro, name='livro_form'),
     path("perfil/", users_view.perfil, name='perfil'),
     path('admin/', admin.site.urls),
 ]

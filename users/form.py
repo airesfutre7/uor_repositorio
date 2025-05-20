@@ -2,7 +2,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User 
-from .models import Perfil, Monografia
+from .models import Perfil, Monografia, Tese, Artigo, Livro, Dissertacao
 
 class CadastroForm(UserCreationForm):
    
@@ -50,14 +50,10 @@ class ProfileForm(forms.ModelForm):
 class MonografiaForm(forms.ModelForm):
     class Meta:
         model = Monografia
-        fields = ['autor', 'titulo', 'resumo', 'ficheiro']
+        fields = ['titulo', 'resumo', 'ficheiro']
         
         widgets = {
-        
-            'autor': forms.TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Autor da monografia'
-            }),
+           
             'titulo': forms.TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Título da monografia'
@@ -65,6 +61,102 @@ class MonografiaForm(forms.ModelForm):
             'resumo': forms.Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Resumo da monografia'
+            }),
+            'ficheiro': forms.ClearableFileInput(attrs={
+                'class': 'custom-file-input',
+                'id': 'inputGroupFile01'
+            }),
+
+               
+        }
+
+class TeseForm(forms.ModelForm):
+    class Meta:
+        model = Tese
+        fields = ['titulo', 'resumo', 'ficheiro']
+        
+        widgets = {
+        
+            
+            'titulo': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Título da tese'
+            }),
+            'resumo': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Resumo da tese'
+            }),
+            'ficheiro': forms.ClearableFileInput(attrs={
+                'class': 'custom-file-input',
+                'id': 'inputGroupFile01'
+            }),
+
+               
+        }
+
+class DissertacaoForm(forms.ModelForm):
+    class Meta:
+        model = Dissertacao
+        fields = ['titulo', 'resumo', 'ficheiro']
+        
+        widgets = {
+        
+           
+            'titulo': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Título da dissertação'
+            }),
+            'resumo': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Resumo da dissertação'
+            }),
+            'ficheiro': forms.ClearableFileInput(attrs={
+                'class': 'custom-file-input',
+                'id': 'inputGroupFile01'
+            }),
+
+               
+        }
+
+class ArtigoForm(forms.ModelForm):
+    class Meta:
+        model = Artigo
+        fields = ['titulo', 'resumo', 'ficheiro']
+        
+        widgets = {
+        
+           
+            'titulo': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Título da artigo'
+            }),
+            'resumo': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Resumo da artigo'
+            }),
+            'ficheiro': forms.ClearableFileInput(attrs={
+                'class': 'custom-file-input',
+                'id': 'inputGroupFile01'
+            }),
+
+               
+        }
+
+class LivroForm(forms.ModelForm):
+    class Meta:
+        model = Livro
+        fields = ['titulo', 'resumo', 'ficheiro']
+        
+        widgets = {
+        
+           
+            'titulo': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Título da livro'
+            }),
+            'resumo': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Resumo da livro'
             }),
             'ficheiro': forms.ClearableFileInput(attrs={
                 'class': 'custom-file-input',

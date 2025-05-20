@@ -2,7 +2,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User 
-from .models import Perfil
+from .models import Perfil, Monografia
 
 class CadastroForm(UserCreationForm):
    
@@ -46,4 +46,30 @@ class ProfileForm(forms.ModelForm):
             }),
             }
 
-    
+
+class MonografiaForm(forms.ModelForm):
+    class Meta:
+        model = Monografia
+        fields = ['autor', 'titulo', 'resumo', 'ficheiro']
+        
+        widgets = {
+        
+            'autor': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Autor da monografia'
+            }),
+            'titulo': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Título da monografia'
+            }),
+            'resumo': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Resumo da monografia'
+            }),
+            'ficheiro': forms.ClearableFileInput(attrs={
+                'class': 'custom-file-input',
+                'id': 'inputGroupFile01'
+            }),
+
+               
+        }

@@ -101,7 +101,7 @@ class Dissertacao(models.Model):
         ('econ', 'Faculdade de Economia'),
     ]
     
-    autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='dissertação')
+    autor = models.ForeignKey(Perfil, on_delete=models.CASCADE, related_name='dissertacoes')
     titulo = models.CharField(max_length=255)
     resumo = models.TextField()
     faculdade = models.CharField(max_length=20, choices=STATUS_CHOICES, default='no')

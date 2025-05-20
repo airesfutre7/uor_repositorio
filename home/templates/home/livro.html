@@ -10,7 +10,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Tese</title>
+        <title>Livro</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
@@ -361,14 +361,14 @@
                         </div>
                        
                         <div class="page-separator">
-                            <div class="page-separator__text">Teses</div>
+                            <div class="page-separator__text">Livros</div>
                         </div>
                        
-                         {% if Teses %}
+                         {% if livros %}
                         <div class="row card-group-row">
                            
                                 
-                                    {% for tese in teses %}
+                                    {% for livro in livros %}
                                     <div class="col-lg-3 card-group-row__col">
                                         
                                         
@@ -380,7 +380,7 @@
                                             class="card-img-top js-image"
                                             data-position=""
                                             data-height="140">
-                                                <img src="{{ tese.capa.url }}"
+                                                <img src="{{ livro.capa.url }}"
                                                     alt="course">
                                                 <span class="overlay__content">
                                                     <span class="overlay__action d-flex flex-column text-center">
@@ -396,8 +396,8 @@
                                                 <div class="d-flex">
                                                     <div class="flex">
                                                         <a class="card-title"
-                                                        href="student-take-course.html">{{ tese.titulo }}</a>
-                                                        <small class="text-50 font-weight-bold mb-4pt">{{ tese.autor }}</small>
+                                                        href="student-take-course.html">{{ livro.titulo }}</a>
+                                                        <small class="text-50 font-weight-bold mb-4pt">{{ livro.autor }}</small>
                                                     </div>
                                                     
                                                 </div>
@@ -408,7 +408,7 @@
                                                     
                                                     <div class="col-auto d-flex align-items-center">
                                                         <!--<span class="material-icons icon-16pt text-50 mr-4pt">play_circle_outline</span>-->
-                                                        <p class="flex text-50 lh-1 mb-0"><small>{{ tese.date|date:"d/m/y H:i" }}</small></p>
+                                                        <p class="flex text-50 lh-1 mb-0"><small>{{ livro.date|date:"d/m/y H:i" }}</small></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -423,12 +423,12 @@
                                                         class="rounded">
                                                 </div>
                                                 <div class="media-body">
-                                                    <div class="card-title mb-0">{{ tese.titulo }}</div>
+                                                    <div class="card-title mb-0">{{ livro.titulo }}</div>
                                                     
                                                 </div>
                                             </div>
 
-                                            <p class="my-16pt text-70">{{ tese.resumo }}</p>
+                                            <p class="my-16pt text-70">{{ livro.resumo }}</p>
 
 
                                             <div class="my-32pt">
@@ -446,8 +446,10 @@
                                     </div>
                                     {% endfor %}
 
+                                
+                            
+
                         </div>
-                     
                         <div class="mb-32pt">
 
                             <ul class="pagination justify-content-start pagination-xsm m-0">

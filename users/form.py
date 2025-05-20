@@ -46,11 +46,10 @@ class ProfileForm(forms.ModelForm):
             }),
             }
 
-
 class MonografiaForm(forms.ModelForm):
     class Meta:
         model = Monografia
-        fields = ['titulo', 'resumo', 'ficheiro']
+        fields = ['titulo', 'resumo', 'faculdade', 'ficheiro']
         
         widgets = {
            
@@ -61,6 +60,9 @@ class MonografiaForm(forms.ModelForm):
             'resumo': forms.Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Resumo da monografia'
+            }),
+            'faculdade': forms.Select(attrs={
+                'class': 'form-control'
             }),
             'ficheiro': forms.ClearableFileInput(attrs={
                 'class': 'custom-file-input',
@@ -73,7 +75,7 @@ class MonografiaForm(forms.ModelForm):
 class TeseForm(forms.ModelForm):
     class Meta:
         model = Tese
-        fields = ['titulo', 'resumo', 'ficheiro']
+        fields = ['titulo', 'resumo', 'faculdade', 'ficheiro']
         
         widgets = {
         
@@ -86,6 +88,9 @@ class TeseForm(forms.ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Resumo da tese'
             }),
+            'faculdade': forms.Select(attrs={
+                'class': 'form-control'
+            }),
             'ficheiro': forms.ClearableFileInput(attrs={
                 'class': 'custom-file-input',
                 'id': 'inputGroupFile01'
@@ -97,7 +102,7 @@ class TeseForm(forms.ModelForm):
 class DissertacaoForm(forms.ModelForm):
     class Meta:
         model = Dissertacao
-        fields = ['titulo', 'resumo', 'ficheiro']
+        fields = ['titulo', 'resumo', 'faculdade', 'ficheiro']
         
         widgets = {
         
@@ -110,6 +115,9 @@ class DissertacaoForm(forms.ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Resumo da dissertação'
             }),
+            'faculdade': forms.Select(attrs={
+                'class': 'form-control'
+            }),
             'ficheiro': forms.ClearableFileInput(attrs={
                 'class': 'custom-file-input',
                 'id': 'inputGroupFile01'
@@ -121,7 +129,7 @@ class DissertacaoForm(forms.ModelForm):
 class ArtigoForm(forms.ModelForm):
     class Meta:
         model = Artigo
-        fields = ['titulo', 'resumo', 'ficheiro']
+        fields = ['titulo', 'resumo', 'faculdade', 'ficheiro']
         
         widgets = {
         
@@ -134,6 +142,9 @@ class ArtigoForm(forms.ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Resumo da artigo'
             }),
+            'faculdade': forms.Select(attrs={
+                'class': 'form-control'
+            }),
             'ficheiro': forms.ClearableFileInput(attrs={
                 'class': 'custom-file-input',
                 'id': 'inputGroupFile01'
@@ -145,7 +156,7 @@ class ArtigoForm(forms.ModelForm):
 class LivroForm(forms.ModelForm):
     class Meta:
         model = Livro
-        fields = ['titulo', 'resumo', 'ficheiro']
+        fields = ['titulo', 'resumo', 'faculdade', 'ficheiro']
         
         widgets = {
         
@@ -158,6 +169,10 @@ class LivroForm(forms.ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Resumo da livro'
             }),
+            'faculdade': forms.Select(attrs={
+                'class': 'form-control'
+            }),
+
             'ficheiro': forms.ClearableFileInput(attrs={
                 'class': 'custom-file-input',
                 'id': 'inputGroupFile01'

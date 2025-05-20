@@ -364,122 +364,93 @@
                             <div class="page-separator__text">Monografias</div>
                         </div>
                        
-
+                         {% if monografias %}
                         <div class="row card-group-row">
-                            {% for monografia in monografias %}
-                            <div class="col-md-6 col-lg-4 col-xl-3 card-group-row__col">
+                           
+                                
+                                    {% for monografia in monografias %}
+                                    <div class="col-lg-3 card-group-row__col">
+                                        
+                                        
+                                        <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay card-group-row__card"
+                                            data-toggle="popover"
+                                            data-trigger="click">
 
-                                <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal card-group-row__card"
-                                     data-overlay-onload-show
-                                     data-popover-onload-show
-                                     data-force-reveal
-                                     data-partial-height="44"
-                                     data-toggle="popover"
-                                     data-trigger="click">
+                                            <a href="student-take-course.html"
+                                            class="card-img-top js-image"
+                                            data-position=""
+                                            data-height="140">
+                                                <img src="{{ monografia.capa.url }}"
+                                                    alt="course">
+                                                <span class="overlay__content">
+                                                    <span class="overlay__action d-flex flex-column text-center">
+                                                        <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                        <span class="card-title text-white">Resume</span>
+                                                    </span>
+                                                </span>
+                                            </a>
 
-                                    <a href="student-course.html"
-                                       class="js-image"
-                                       data-position="">
-                                        <img src="{{ monografia.capa.url }}"
-                                             alt="course">
-                                        <span class="overlay__content align-items-start justify-content-start">
-                                            <span class="overlay__action card-body d-flex align-items-center">
-                                                <i class="material-icons mr-4pt">play_circle_outline</i>
-                                                <span class="card-title text-white">Resumo</span>
-                                            </span>
-                                        </span>
-                                    </a>
+                                            <!--<span class="corner-ribbon corner-ribbon--default-right-top corner-ribbon--shadow bg-accent text-white">NEW</span>-->
 
-                                    <div class="mdk-reveal__content">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="flex">
-                                                    <a class="card-title"
-                                                       href="student-course.html">{{ monografia.titulo }}</a>
+                                            <div class="card-body flex">
+                                                <div class="d-flex">
+                                                    <div class="flex">
+                                                        <a class="card-title"
+                                                        href="student-take-course.html">{{ monografia.titulo }}</a>
                                                         <small class="text-50 font-weight-bold mb-4pt">{{ monografia.autor }}</small>
+                                                    </div>
+                                                    
                                                 </div>
-                                                <a href="student-course.html"
-                                                   data-toggle="tooltip"
-                                                   data-title="Remove Favorite"
-                                                   data-placement="top"
-                                                   data-boundary="window"
-                                                   ></a>
-                                            </div>
-                                           
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="popoverContainer d-none">
-                                    <div class="media">
-                                        <div class="media-left mr-12pt">
-                                            <img src="{{ monografia.capa.url }}"
-                                                 width="40"
-                                                 height="40"
-                                                 alt="Angular"
-                                                 class="rounded">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="card-title mb-0">N{{ monografia.titulo }}</div>
-                                            <p class="lh-1 mb-0">
                                                 
-                                                <span class="text-50 small font-weight-bold">{{ monografia.autor }}</span>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <p class="my-16pt text-70">Learn the fundamentals of working with Angular and how to create basic applications.</p>
-
-                                    <div class="mb-16pt">
-                                        <div class="d-flex align-items-center">
-                                            <span class="material-icons icon-16pt text-50 mr-8pt">check</span>
-                                            <p class="flex text-50 lh-1 mb-0"><small>Fundamentals of working with Angular</small></p>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <span class="material-icons icon-16pt text-50 mr-8pt">check</span>
-                                            <p class="flex text-50 lh-1 mb-0"><small>Create complete Angular applications</small></p>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <span class="material-icons icon-16pt text-50 mr-8pt">check</span>
-                                            <p class="flex text-50 lh-1 mb-0"><small>Working with the Angular CLI</small></p>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <span class="material-icons icon-16pt text-50 mr-8pt">check</span>
-                                            <p class="flex text-50 lh-1 mb-0"><small>Understanding Dependency Injection</small></p>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <span class="material-icons icon-16pt text-50 mr-8pt">check</span>
-                                            <p class="flex text-50 lh-1 mb-0"><small>Testing with Angular</small></p>
-                                        </div>
-                                    </div>
-
-                                    <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <div class="d-flex align-items-center mb-4pt">
-                                                <span class="material-icons icon-16pt text-50 mr-4pt">access_time</span>
-                                                <p class="flex text-50 lh-1 mb-0"><small>6 hours</small></p>
                                             </div>
-                                            <div class="d-flex align-items-center mb-4pt">
-                                                <span class="material-icons icon-16pt text-50 mr-4pt">play_circle_outline</span>
-                                                <p class="flex text-50 lh-1 mb-0"><small>12 lessons</small></p>
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <span class="material-icons icon-16pt text-50 mr-4pt">assessment</span>
-                                                <p class="flex text-50 lh-1 mb-0"><small>Beginner</small></p>
+                                            <div class="card-footer">
+                                                <div class="row justify-content-between">
+                                                    
+                                                    <div class="col-auto d-flex align-items-center">
+                                                        <!--<span class="material-icons icon-16pt text-50 mr-4pt">play_circle_outline</span>-->
+                                                        <p class="flex text-50 lh-1 mb-0"><small>{{ monografia.date|date:"d/m/y H:i" }}</small></p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col text-right">
-                                            <a href="student-course.html"
-                                               class="btn btn-primary">Continuar a Ler</a>
+                                        <div class="popoverContainer d-none">
+                                            <div class="media">
+                                                <div class="media-left mr-12pt">
+                                                    <img src="{% static 'home/public/images/pdf_icon.png' %}"
+                                                        width="40"
+                                                        height="40"
+                                                        alt="Angular"
+                                                        class="rounded">
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="card-title mb-0">{{ monografia.titulo }}</div>
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <p class="my-16pt text-70">{{ monografia.resumo }}</p>
+
+
+                                            <div class="my-32pt">
+                                                
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <a href="student-take-lesson.html"
+                                                    class="btn btn-primary mr-8pt">Continuar a Ler</a>
+                                                </div>
+                                            </div>
+
+                                            
+
                                         </div>
+
                                     </div>
+                                    {% endfor %}
 
-                                </div>
-
-                            </div>
-                            {% endfor %}
+                                
+                            
 
                         </div>
-
+                        {% endif %}
                         <div class="mb-32pt">
 
                             <ul class="pagination justify-content-start pagination-xsm m-0">

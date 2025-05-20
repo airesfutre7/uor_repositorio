@@ -12,8 +12,23 @@ def home(request):
 
     return render(request,'home/index.html')
 
-def artigos(request):
-    return render(request,'home/artigos.html')
+def artigo_list(request):
+    try:
+        perfil = Perfil.objects.get(user=request.user)
+        artigos = perfil.artigo.all()
+        context = {
+            'perfil': perfil,
+            'artigos': artigos,
+        }
+    except Perfil.DoesNotExist:
+        messages.error(request, "Perfil não encontrado.")
+        return redirect('home')  
+
+    return render(request, 'home/artigo_list.html', context)
+
+def artigo(request):
+   
+    return render(request, 'home/artigos.html')
 
 def monografias(request):
     try:
@@ -29,12 +44,47 @@ def monografias(request):
     
     return render(request, 'home/monografias.html', context)
 
+def livro(request):
+    try:
+        perfil = Perfil.objects.get(user=request.user)
+        livros = perfil.livro.all()
+        context = {
+            'perfil': perfil,
+            'livros': livros,
+        }
+    except Perfil.DoesNotExist:
+        messages.error(request, "Perfil não encontrado.")
+        return redirect('home')  
+    
+    return render(request, 'home/livro.html', context)
 
 def dissertacao(request):
-    return render(request,'home/dissertacao.html')
+    try:
+        perfil = Perfil.objects.get(user=request.user)
+        dissertacoes = perfil.dissertacoes.all()
+        context = {
+            'perfil': perfil,
+            'dissertacoes': dissertacoes,
+    }
+    except Perfil.DoesNotExist:
+        messages.error(request, "Perfil não encontrado.")
+        return redirect('home')  
+    
+    return render(request, 'home/dissertacao.html', context)
 
 def tese(request):
-    return render(request,'home/tese.html')
+    try:
+        perfil = Perfil.objects.get(user=request.user)
+        teses = perfil.tese.all()
+        context = {
+            'perfil': perfil,
+            'teses': teses,
+    }
+    except Perfil.DoesNotExist:
+        messages.error(request, "Perfil não encontrado.")
+        return redirect('home')  
+    
+    return render(request, 'home/tese.html', context)
 
 def faculdade_direito(request):
     return render(request,'home/faculdade_direito.html')

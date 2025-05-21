@@ -35,8 +35,40 @@ def artigo(request, pk ):
     #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
     
    artigo = get_object_or_404(Artigo, pk=pk)
-   
+  
    return render(request, 'home/artigos.html', {'artigo': artigo})
+
+def monografia_view(request, pk ):
+    #autor = get_object_or_404(Perfil, id=autor_id)
+    #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
+    
+   monografia = get_object_or_404(Monografia, pk=pk)
+  
+   return render(request, 'home/monografia_view.html', {'monografia': monografia})
+
+def tese_view(request, pk ):
+    #autor = get_object_or_404(Perfil, id=autor_id)
+    #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
+    
+   tese = get_object_or_404(Tese, pk=pk)
+  
+   return render(request, 'home/tese_view.html', {'tese': tese})
+
+def livro_view(request, pk ):
+    #autor = get_object_or_404(Perfil, id=autor_id)
+    #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
+    
+   livro = get_object_or_404(Livro, pk=pk)
+  
+   return render(request, 'home/livro_view.html', {'livro': livro})
+
+def dissertacao_view(request, pk ):
+    #autor = get_object_or_404(Perfil, id=autor_id)
+    #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
+    
+   dissertacao = get_object_or_404(Dissertacao, pk=pk)
+  
+   return render(request, 'home/dissertacao_view.html', {'dissertacao': dissertacao})
 
 def monografias(request):
     try:
@@ -107,13 +139,15 @@ def faculdade_direito(request):
         teses = Tese.objects.filter(faculdade='dir')
         livros = Livro.objects.filter(faculdade='dir')
         artigos = Artigo.objects.filter(faculdade='dir')
+        dissertacoes = Dissertacao.objects.filter(faculdade='dir')
         context = {
             #'perfil': perfil,
             'teses': teses,
             'monografias': monografias,
             'teses': teses,
             'livros': livros,
-            'artigos': artigos
+            'artigos': artigos,
+            'dissertacoes': dissertacoes
 
     }
     except Perfil.DoesNotExist:
@@ -131,13 +165,15 @@ def faculdade_engenharia(request):
         teses = Tese.objects.filter(faculdade='eng')
         livros = Livro.objects.filter(faculdade='eng')
         artigos = Artigo.objects.filter(faculdade='eng')
+        dissertacoes = Dissertacao.objects.filter(faculdade='eng')
         context = {
             #'perfil': perfil,
             'teses': teses,
             'monografias': monografias,
             'teses': teses,
             'livros': livros,
-            'artigos': artigos
+            'artigos': artigos,
+            'dissertacoes': dissertacoes
 
     }
     except Perfil.DoesNotExist:
@@ -154,12 +190,15 @@ def faculdade_economia(request):
         teses = Tese.objects.filter(faculdade='econ')
         livros = Livro.objects.filter(faculdade='econ')
         artigos = Artigo.objects.filter(faculdade='econ')
+        dissertacoes = Dissertacao.objects.filter(faculdade='econ')
         context = {
+            #'perfil': perfil,
             'teses': teses,
             'monografias': monografias,
             'teses': teses,
             'livros': livros,
-            'artigos': artigos
+            'artigos': artigos,
+            'dissertacoes': dissertacoes
 
     }
     except Perfil.DoesNotExist:
@@ -176,13 +215,15 @@ def faculdade_gestao(request):
         teses = Tese.objects.filter(faculdade='ges')
         livros = Livro.objects.filter(faculdade='ges')
         artigos = Artigo.objects.filter(faculdade='ges')
+        dissertacoes = Dissertacao.objects.filter(faculdade='ges')
         context = {
-          
+            #'perfil': perfil,
             'teses': teses,
             'monografias': monografias,
             'teses': teses,
             'livros': livros,
-            'artigos': artigos
+            'artigos': artigos,
+            'dissertacoes': dissertacoes
 
     }
     except Perfil.DoesNotExist:

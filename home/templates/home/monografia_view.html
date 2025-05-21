@@ -10,7 +10,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Artigo</title>
+        <title>Monografia</title>
 
         <!-- Prevent the demo from appearing in search engines -->
         <meta name="robots"
@@ -343,17 +343,17 @@
                                 <div class="overlay__content"></div>
                             </div>
                             <div class="flex">
-                                <h1 class="h2 measure-lead-max mb-16pt">{{ artigo.titulo }}</h1>
+                                <h1 class="h2 measure-lead-max mb-16pt">{{ monografia.titulo }}</h1>
                                 <div class="d-flex align-items-center">
                                     <a href="teacher-profile.html"
                                        class="avatar avatar-sm mr-12pt">
-                                        <img src="{{ artigo.autor.imagem.url }}"
+                                        <img src="{{ monografia.autor.imagem.url }}"
                                              alt="author"
                                              class="avatar-img rounded-circle">
                                     </a>
                                     <div class="mr-16pt">
                                         <a href="teacher-profile.html"
-                                           class="card-title">{{ artigo.autor }}</a>
+                                           class="card-title">{{ monografia.autor }}</a>
                                         <div class="d-flex align-items-center">
                                             <small class="text-50 mr-2">Autor</small>
                                            
@@ -376,8 +376,8 @@
                                     class="chip chip-outline-secondary">Sketch</a>
                                 </div>-->
                                
-                                {% if artigo  %} 
-                                <iframe src="{{ artigo.ficheiro.url }}" width="80%" height="500px"></iframe>
+                                {% if monografia  %} 
+                                <iframe src="{{ monografia.ficheiro.url }}" width="80%" height="500px"></iframe>
                                 {% endif %}
                                 
                                 <div class="measure-lead-max">

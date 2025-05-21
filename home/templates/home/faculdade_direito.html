@@ -381,7 +381,7 @@
                 </div>
                
                 
-
+                
                 <div class="container page__container">
                     <div class="page-section">
                         {% if livros %}
@@ -413,7 +413,7 @@
                                         class="card-img-top js-image"
                                         data-position=""
                                         data-height="140">
-                                            <img src="{% static 'home/public/images/paths/sketch_430x168.png' %}"
+                                            <img src="{{ livro.capa.url }}"
                                                 alt="course">
                                             <span class="overlay__content">
                                                 <span class="overlay__action d-flex flex-column text-center">
@@ -604,7 +604,7 @@
                                     class="card-img-top js-image"
                                     data-position=""
                                     data-height="140">
-                                        <img src="{% static 'home/public/images/pdf_icon.png' %}"
+                                        <img src="{{ artigo.capa.url }}"
                                             alt="course">
                                         <span class="overlay__content">
                                             <span class="overlay__action d-flex flex-column text-center">
@@ -780,7 +780,7 @@
                                     class="card-img-top js-image"
                                     data-position=""
                                     data-height="140">
-                                        <img src="{% static 'home/public/images/paths/sketch_430x168.png' %}"
+                                        <img src="{{ dissertacao.capa.url }}"
                                             alt="course">
                                         <span class="overlay__content">
                                             <span class="overlay__action d-flex flex-column text-center">
@@ -968,7 +968,7 @@
                                     class="card-img-top js-image"
                                     data-position=""
                                     data-height="140">
-                                        <img src="{{ monografia.capa.url }}"
+                                        <img src="{{ tese.capa.url }}"
                                             alt="course">
                                         <span class="overlay__content">
                                             <span class="overlay__action d-flex flex-column text-center">

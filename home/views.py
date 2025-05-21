@@ -30,15 +30,13 @@ def artigo_list(request):
 
     return render(request, 'home/artigo_list.html', context)
 
-def artigo(request ):
+def artigo(request, pk ):
     #autor = get_object_or_404(Perfil, id=autor_id)
     #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
     
-    context = {
-        'artigo': artigo
-    }
+   artigo = get_object_or_404(Artigo, pk=pk)
    
-    return render(request, 'home/artigos.html', context)
+   return render(request, 'home/artigos.html', {'artigo': artigo})
 
 def monografias(request):
     try:
@@ -104,11 +102,11 @@ def faculdade_direito(request):
     try:
        # perfil = Perfil.objects.get(user=request.user)
         #teses = perfil.tese.all()
-        teses = Tese.objects.all()
-        monografias = Monografia.objects.all()
-        teses = Tese.objects.all()
-        livros = Livro.objects.all()
-        artigos = Artigo.objects.all()
+        teses = Tese.objects.filter(faculdade='dir')
+        monografias = Monografia.objects.filter(faculdade='dir')
+        teses = Tese.objects.filter(faculdade='dir')
+        livros = Livro.objects.filter(faculdade='dir')
+        artigos = Artigo.objects.filter(faculdade='dir')
         context = {
             #'perfil': perfil,
             'teses': teses,
@@ -127,13 +125,12 @@ def faculdade_direito(request):
 def faculdade_engenharia(request):
 
     try:
-       # perfil = Perfil.objects.get(user=request.user)
-        #teses = perfil.tese.all()
-        teses = Tese.objects.all()
-        monografias = Monografia.objects.all()
-        teses = Tese.objects.all()
-        livros = Livro.objects.all()
-        artigos = Artigo.objects.all()
+       
+        teses = Tese.objects.filter(faculdade='eng')
+        monografias = Monografia.objects.filter(faculdade='eng')
+        teses = Tese.objects.filter(faculdade='eng')
+        livros = Livro.objects.filter(faculdade='eng')
+        artigos = Artigo.objects.filter(faculdade='eng')
         context = {
             #'perfil': perfil,
             'teses': teses,
@@ -146,19 +143,18 @@ def faculdade_engenharia(request):
     except Perfil.DoesNotExist:
         messages.error(request, "Perfil não encontrado.")
         return redirect('home')  
-    return render(request,'home/faculdade_engenharia.html')
+    
+    return render(request,'home/faculdade_engenharia.html', context)
 
 def faculdade_economia(request):
     try:
-       # perfil = Perfil.objects.get(user=request.user)
-        #teses = perfil.tese.all()
-        teses = Tese.objects.all()
-        monografias = Monografia.objects.all()
-        teses = Tese.objects.all()
-        livros = Livro.objects.all()
-        artigos = Artigo.objects.all()
+  
+        teses = Tese.objects.filter(faculdade='econ')
+        monografias = Monografia.objects.filter(faculdade='econ')
+        teses = Tese.objects.filter(faculdade='econ')
+        livros = Livro.objects.filter(faculdade='econ')
+        artigos = Artigo.objects.filter(faculdade='econ')
         context = {
-            #'perfil': perfil,
             'teses': teses,
             'monografias': monografias,
             'teses': teses,
@@ -170,19 +166,18 @@ def faculdade_economia(request):
         messages.error(request, "Perfil não encontrado.")
         return redirect('home')  
 
-    return render(request,'home/faculdade_economia.html')
+    return render(request,'home/faculdade_economia.html', context)
 
 def faculdade_gestao(request):
     try:
-       # perfil = Perfil.objects.get(user=request.user)
-        #teses = perfil.tese.all()
-        teses = Tese.objects.all()
-        monografias = Monografia.objects.all()
-        teses = Tese.objects.all()
-        livros = Livro.objects.all()
-        artigos = Artigo.objects.all()
+    
+        teses = Tese.objects.filter(faculdade='ges')
+        monografias = Monografia.objects.filter(faculdade='ges')
+        teses = Tese.objects.filter(faculdade='ges')
+        livros = Livro.objects.filter(faculdade='ges')
+        artigos = Artigo.objects.filter(faculdade='ges')
         context = {
-            #'perfil': perfil,
+          
             'teses': teses,
             'monografias': monografias,
             'teses': teses,
@@ -194,7 +189,7 @@ def faculdade_gestao(request):
         messages.error(request, "Perfil não encontrado.")
         return redirect('home')  
 
-    return render(request,'home/faculdade_gestao.html')
+    return render(request,'home/faculdade_gestao.html', context)
 
 def serve_pdf(request, filename):
     filepath = os.path.join('media/pdfs', filename)

@@ -108,194 +108,194 @@
                         <span class="d-none d-lg-block">UÓR</span>
                     </a>
                     
-                    {% if user.is_authenticated %}
+                   {% if user.is_authenticated %}
 
                         <div class="flex"></div>
-                         <div class="nav navbar-nav flex-nowrap d-flex mr-16pt">
+                            <div class="nav navbar-nav flex-nowrap d-flex mr-16pt">
 
-                        <!-- Notifications dropdown -->
-                        <div class="nav-item dropdown dropdown-notifications dropdown-xs-down-full"
-                             data-toggle="tooltip"
-                             data-title="Messages"
-                             data-placement="bottom"
-                             data-boundary="window">
-                            <button class="nav-link btn-flush dropdown-toggle"
-                                    type="button"
-                                    data-toggle="dropdown"
-                                    data-caret="false">
-                                <i class="material-icons icon-24pt">mail_outline</i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div data-perfect-scrollbar
-                                     class="position-relative">
-                                    <div class="dropdown-header"><strong>Messages</strong></div>
-                                    <div class="list-group list-group-flush mb-0">
+                                <!-- Notifications dropdown -->
+                                <div class="nav-item dropdown dropdown-notifications dropdown-xs-down-full"
+                                    data-toggle="tooltip"
+                                    data-title="Messages"
+                                    data-placement="bottom"
+                                    data-boundary="window">
+                                    <button class="nav-link btn-flush dropdown-toggle"
+                                            type="button"
+                                            data-toggle="dropdown"
+                                            data-caret="false">
+                                        <i class="material-icons icon-24pt">mail_outline</i>
+                                    </button>
+                                    <!--<div class="dropdown-menu dropdown-menu-right">
+                                        <div data-perfect-scrollbar
+                                            class="position-relative">
+                                            <div class="dropdown-header"><strong>Messages</strong></div>
+                                            <div class="list-group list-group-flush mb-0">
 
-                                        <a href="javascript:void(0);"
-                                           class="list-group-item list-group-item-action unread">
-                                            <span class="d-flex align-items-center mb-1">
-                                                <small class="text-black-50">5 minutes ago</small>
+                                                <a href="javascript:void(0);"
+                                                class="list-group-item list-group-item-action unread">
+                                                    <span class="d-flex align-items-center mb-1">
+                                                        <small class="text-black-50">5 minutes ago</small>
 
-                                                <span class="ml-auto unread-indicator bg-accent"></span>
+                                                        <span class="ml-auto unread-indicator bg-accent"></span>
 
-                                            </span>
-                                            <span class="d-flex">
-                                                <span class="avatar avatar-xs mr-2">
-                                                    <img src="../../public/images/people/110/woman-5.jpg"
-                                                         alt="people"
-                                                         class="avatar-img rounded-circle">
-                                                </span>
-                                                <span class="flex d-flex flex-column">
-                                                    <strong class="text-black-100">Michelle</strong>
-                                                    <span class="text-black-70">Clients loved the new design.</span>
-                                                </span>
-                                            </span>
-                                        </a>
+                                                    </span>
+                                                    <span class="d-flex">
+                                                        <span class="avatar avatar-xs mr-2">
+                                                            <img src="../../public/images/people/110/woman-5.jpg"
+                                                                alt="people"
+                                                                class="avatar-img rounded-circle">
+                                                        </span>
+                                                        <span class="flex d-flex flex-column">
+                                                            <strong class="text-black-100">Michelle</strong>
+                                                            <span class="text-black-70">Clients loved the new design.</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
 
-                                        <a href="javascript:void(0);"
-                                           class="list-group-item list-group-item-action">
-                                            <span class="d-flex align-items-center mb-1">
-                                                <small class="text-black-50">5 minutes ago</small>
+                                                <a href="javascript:void(0);"
+                                                class="list-group-item list-group-item-action">
+                                                    <span class="d-flex align-items-center mb-1">
+                                                        <small class="text-black-50">5 minutes ago</small>
 
-                                            </span>
-                                            <span class="d-flex">
-                                                <span class="avatar avatar-xs mr-2">
-                                                    <img src="../../public/images/people/110/woman-5.jpg"
-                                                         alt="people"
-                                                         class="avatar-img rounded-circle">
-                                                </span>
-                                                <span class="flex d-flex flex-column">
-                                                    <strong class="text-black-100">Michelle</strong>
-                                                    <span class="text-black-70">🔥 Superb job..</span>
-                                                </span>
-                                            </span>
-                                        </a>
+                                                    </span>
+                                                    <span class="d-flex">
+                                                        <span class="avatar avatar-xs mr-2">
+                                                            <img src="../../public/images/people/110/woman-5.jpg"
+                                                                alt="people"
+                                                                class="avatar-img rounded-circle">
+                                                        </span>
+                                                        <span class="flex d-flex flex-column">
+                                                            <strong class="text-black-100">Michelle</strong>
+                                                            <span class="text-black-70">🔥 Superb job..</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
 
-                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                </div>
+                                <!-- // END Notifications dropdown -->
+
+                                <!-- Notifications dropdown -->
+                                <div class="nav-item ml-16pt dropdown dropdown-notifications dropdown-xs-down-full"
+                                    data-toggle="tooltip"
+                                    data-title="Notifications"
+                                    data-placement="bottom"
+                                    data-boundary="window">
+                                    <button class="nav-link btn-flush dropdown-toggle"
+                                            type="button"
+                                            data-toggle="dropdown"
+                                            data-caret="false">
+                                        <i class="material-icons">notifications_none</i>
+                                       <!-- <span class="badge badge-notifications badge-accent">2</span>-->
+                                    </button>
+                                    <!--<div class="dropdown-menu dropdown-menu-right">
+                                        <div data-perfect-scrollbar
+                                            class="position-relative">
+                                            <div class="dropdown-header"><strong>System notifications</strong></div>
+                                            <div class="list-group list-group-flush mb-0">
+
+                                                <a href="javascript:void(0);"
+                                                class="list-group-item list-group-item-action unread">
+                                                    <span class="d-flex align-items-center mb-1">
+                                                        <small class="text-black-50">3 minutes ago</small>
+
+                                                        <span class="ml-auto unread-indicator bg-accent"></span>
+
+                                                    </span>
+                                                    <span class="d-flex">
+                                                        <span class="avatar avatar-xs mr-2">
+                                                            <span class="avatar-title rounded-circle bg-light">
+                                                                <i class="material-icons font-size-16pt text-accent">account_circle</i>
+                                                            </span>
+                                                        </span>
+                                                        <span class="flex d-flex flex-column">
+
+                                                            <span class="text-black-70">Your profile information has not been synced correctly.</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+
+                                                <a href="javascript:void(0);"
+                                                class="list-group-item list-group-item-action">
+                                                    <span class="d-flex align-items-center mb-1">
+                                                        <small class="text-black-50">5 hours ago</small>
+
+                                                    </span>
+                                                    <span class="d-flex">
+                                                        <span class="avatar avatar-xs mr-2">
+                                                            <span class="avatar-title rounded-circle bg-light">
+                                                                <i class="material-icons font-size-16pt text-primary">group_add</i>
+                                                            </span>
+                                                        </span>
+                                                        <span class="flex d-flex flex-column">
+                                                            <strong class="text-black-100">Adrian. D</strong>
+                                                            <span class="text-black-70">Wants to join your private group.</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+
+                                                <a href="javascript:void(0);"
+                                                class="list-group-item list-group-item-action">
+                                                    <span class="d-flex align-items-center mb-1">
+                                                        <small class="text-black-50">1 day ago</small>
+
+                                                    </span>
+                                                    <span class="d-flex">
+                                                        <span class="avatar avatar-xs mr-2">
+                                                            <span class="avatar-title rounded-circle bg-light">
+                                                                <i class="material-icons font-size-16pt text-warning">storage</i>
+                                                            </span>
+                                                        </span>
+                                                        <span class="flex d-flex flex-column">
+
+                                                            <span class="text-black-70">Your deploy was successful.</span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <!-- // END Notifications dropdown -->
+
+                                <div class="nav-item dropdown">
+                                <a href="#"
+                                class="nav-link d-flex align-items-center dropdown-toggle"
+                                data-toggle="dropdown"
+                                data-caret="false">
+
+                                    
+                                    <span class="avatar avatar-sm mr-8pt2">
+
+                                        {% if user.perfil.imagem %}
+
+                                        <!-- <span class="avatar-title rounded-circle bg-primary"><img src="{{ user.perfil.imagem.url }}"></span>-->
+                                            <img id="imagePreview" src="{{ user.perfil.imagem.url }}"
+                                                        alt="people" width="45" class="rounded-circle" />
+                                        
+                                        {% else %}
+
+                                            <span class="avatar-title rounded-circle bg-primary"><img src=""></span>
+
+                                        {% endif %}
+                                        
+
+                                    </span>
+
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-header"><strong>Account</strong></div>
+                                    <a class="dropdown-item"
+                                    href="{% url 'edit_perfil' %}">Editar perfil</a>
+
+                                    <a class="dropdown-item"
+                                    href="{% url 'logout' %}">Logout</a>
                                 </div>
                             </div>
                         </div>
-                        <!-- // END Notifications dropdown -->
-
-                        <!-- Notifications dropdown -->
-                        <div class="nav-item ml-16pt dropdown dropdown-notifications dropdown-xs-down-full"
-                             data-toggle="tooltip"
-                             data-title="Notifications"
-                             data-placement="bottom"
-                             data-boundary="window">
-                            <button class="nav-link btn-flush dropdown-toggle"
-                                    type="button"
-                                    data-toggle="dropdown"
-                                    data-caret="false">
-                                <i class="material-icons">notifications_none</i>
-                                <span class="badge badge-notifications badge-accent">2</span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div data-perfect-scrollbar
-                                     class="position-relative">
-                                    <div class="dropdown-header"><strong>System notifications</strong></div>
-                                    <div class="list-group list-group-flush mb-0">
-
-                                        <a href="javascript:void(0);"
-                                           class="list-group-item list-group-item-action unread">
-                                            <span class="d-flex align-items-center mb-1">
-                                                <small class="text-black-50">3 minutes ago</small>
-
-                                                <span class="ml-auto unread-indicator bg-accent"></span>
-
-                                            </span>
-                                            <span class="d-flex">
-                                                <span class="avatar avatar-xs mr-2">
-                                                    <span class="avatar-title rounded-circle bg-light">
-                                                        <i class="material-icons font-size-16pt text-accent">account_circle</i>
-                                                    </span>
-                                                </span>
-                                                <span class="flex d-flex flex-column">
-
-                                                    <span class="text-black-70">Your profile information has not been synced correctly.</span>
-                                                </span>
-                                            </span>
-                                        </a>
-
-                                        <a href="javascript:void(0);"
-                                           class="list-group-item list-group-item-action">
-                                            <span class="d-flex align-items-center mb-1">
-                                                <small class="text-black-50">5 hours ago</small>
-
-                                            </span>
-                                            <span class="d-flex">
-                                                <span class="avatar avatar-xs mr-2">
-                                                    <span class="avatar-title rounded-circle bg-light">
-                                                        <i class="material-icons font-size-16pt text-primary">group_add</i>
-                                                    </span>
-                                                </span>
-                                                <span class="flex d-flex flex-column">
-                                                    <strong class="text-black-100">Adrian. D</strong>
-                                                    <span class="text-black-70">Wants to join your private group.</span>
-                                                </span>
-                                            </span>
-                                        </a>
-
-                                        <a href="javascript:void(0);"
-                                           class="list-group-item list-group-item-action">
-                                            <span class="d-flex align-items-center mb-1">
-                                                <small class="text-black-50">1 day ago</small>
-
-                                            </span>
-                                            <span class="d-flex">
-                                                <span class="avatar avatar-xs mr-2">
-                                                    <span class="avatar-title rounded-circle bg-light">
-                                                        <i class="material-icons font-size-16pt text-warning">storage</i>
-                                                    </span>
-                                                </span>
-                                                <span class="flex d-flex flex-column">
-
-                                                    <span class="text-black-70">Your deploy was successful.</span>
-                                                </span>
-                                            </span>
-                                        </a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- // END Notifications dropdown -->
-
-                        <div class="nav-item dropdown">
-                            <a href="#"
-                               class="nav-link d-flex align-items-center dropdown-toggle"
-                               data-toggle="dropdown"
-                               data-caret="false">
-
-                                 
-                                <span class="avatar avatar-sm mr-8pt2">
-
-                                    {% if user.perfil.imagem %}
-
-                                       <!-- <span class="avatar-title rounded-circle bg-primary"><img src="{{ user.perfil.imagem.url }}"></span>-->
-                                         <img id="imagePreview" src="{{ user.perfil.imagem.url }}"
-                                                    alt="people" width="45" class="rounded-circle" />
-                                    
-                                    {% else %}
-
-                                        <span class="avatar-title rounded-circle bg-primary"><img src=""></span>
-
-                                    {% endif %}
-                                    
-
-                                </span>
-
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="dropdown-header"><strong>Account</strong></div>
-                                <a class="dropdown-item"
-                                   href="{% url 'perfil' %}">Teu perfil</a>
-
-                                <a class="dropdown-item"
-                                   href="{% url 'logout' %}">Logout</a>
-                            </div>
-                        </div>
-                    </div>
 
                     {% else %}
                         <ul class="nav navbar-nav ml-auto mr-0">
@@ -667,14 +667,15 @@
                         </div>
 
                         <div class="row card-group-row">
+                            {% for artigo in artigos %}
 
                             <div class="col-md-6 col-lg-4 card-group-row__col">
 
                                 <div class="card card--elevated posts-card-popular overlay card-group-row__card">
-                                    <img src="{% static 'home/public/images/paths/sketch_430x168.png' %}"
+                                    <img src="{{ artigo.capa.url }}"
                                          alt=""
                                          class="card-img">
-                                    <div class="fullbleed bg-primary"
+                                    <div class="fullbleed bg-primary-home"
                                          style="opacity: .5"></div>
                                     <div class="posts-card-popular__content">
                                         <div class="card-body d-flex align-items-center">
@@ -691,80 +692,15 @@
                                                    style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
                                         </div>
                                         <div class="posts-card-popular__title card-body">
-                                            <small class="text-muted text-uppercase">sketch</small>
+                                            <small class="text-muted text-uppercase">Preview</small>
                                             <a class="card-title"
-                                               href="{% url 'artigo_list' %}">Merge Duplicates Inconsistent Symbols</a>
+                                               href="{% url 'artigos' artigo.pk %}">{{ artigo.titulo }}</a>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-
-                            <div class="col-md-6 col-lg-4 card-group-row__col">
-
-                                <div class="card card--elevated posts-card-popular overlay card-group-row__card">
-                                    <img src="{% static 'home/public/images/paths/invision_430x168.png' %}"
-                                         alt=""
-                                         class="card-img">
-                                    <div class="fullbleed bg-primary"
-                                         style="opacity: .5"></div>
-                                    <div class="posts-card-popular__content">
-                                        <div class="card-body d-flex align-items-center">
-                                            <div class="avatar-group flex">
-                                                <div class="avatar avatar-xs"
-                                                     data-toggle="tooltip"
-                                                     data-placement="top"
-                                                     title="Janell D.">
-                                                    
-                                                </div>
-                                            </div>
-                                            <a style="text-decoration: none;"
-                                               class="d-flex align-items-center"
-                                               href=""><i class="material-icons mr-1"
-                                                   style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
-                                        </div>
-                                        <div class="posts-card-popular__title card-body">
-                                            <small class="text-muted text-uppercase">invision</small>
-                                            <a class="card-title"
-                                               href="{% url 'artigo_list' %}">Design Systems Essentials</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-6 col-lg-4 card-group-row__col">
-
-                                <div class="card card--elevated posts-card-popular overlay card-group-row__card">
-                                    <img src="{% static 'home/public/images/paths/photoshop_430x168.png' %}"
-                                         alt=""
-                                         class="card-img">
-                                    <div class="fullbleed bg-primary"
-                                         style="opacity: .5"></div>
-                                    <div class="posts-card-popular__content">
-                                        <div class="card-body d-flex align-items-center">
-                                            <div class="avatar-group flex">
-                                                <div class="avatar avatar-xs"
-                                                     data-toggle="tooltip"
-                                                     data-placement="top"
-                                                     title="Janell D.">
-                                                    
-                                                </div>
-                                            </div>
-                                            <a style="text-decoration: none;"
-                                               class="d-flex align-items-center"
-                                               href=""><i class="material-icons mr-1"
-                                                   style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
-                                        </div>
-                                        <div class="posts-card-popular__title card-body">
-                                            <small class="text-muted text-uppercase">photoshop</small>
-                                            <a class="card-title"
-                                               href="{% url 'artigo_list' %}">Semantic Logo Design</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                            {% endfor %}
 
                         </div>
 

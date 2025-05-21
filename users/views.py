@@ -55,14 +55,14 @@ def perfil(request):
         perfil = Perfil.objects.get(user=request.user)
         monografias = perfil.monografias.all()
         teses = perfil.tese.all()
-        #dissertacoes = perfil.dissertacaos.all()
+        dissertacoes = perfil.dissertacoes.all()
         artigos = perfil.artigo.all()
         livros = perfil.livro.all()
         context = {
             'perfil': perfil,
             'monografias': monografias,
             'artigos': artigos,
-            #'dissertacoes': dissertacoes,
+            'dissertacoes': dissertacoes,
             'teses': teses,
             'livros': livros,
         }

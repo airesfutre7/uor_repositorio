@@ -13,7 +13,9 @@ from users.models import Artigo, Perfil, Monografia, Tese, Livro, Dissertacao
 
 def home(request):
 
-    return render(request,'home/index.html')
+    artigos = Artigo.objects.order_by('-date')[:3]  # Latest 3 by upload date
+    
+    return render(request,'home/index.html', {'artigos': artigos})
 
 def artigo_list(request):
     try:

@@ -4,6 +4,7 @@ from PIL import Image
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 import mimetypes
+import os
 
 # Create your models here.
 
@@ -23,13 +24,12 @@ class Perfil(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-        # Open the image
-        img_path = self.imagem.path
-        img = Image.open(img_path)
-
-        # Resize and crop to 40x40
-        img = img.resize((800, 800), Image.Resampling.LANCZOS)
-        img.save(img_path)
+        if self.imagem:
+            img_path = self.imagem.path
+            if os.path.exists(img_path):
+                img = Image.open(img_path)
+                img = img.resize((800, 800), Image.Resampling.LANCZOS)
+                img.save(img_path)
 
 
 def validate_pdf(file):

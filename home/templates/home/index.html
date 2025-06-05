@@ -678,33 +678,63 @@
 
                             <div class="col-md-6 col-lg-4 card-group-row__col">
 
-                                <div class="card card--elevated posts-card-popular overlay card-group-row__card">
-                                    <img src="{{ artigo.capa.url }}"
-                                         alt=""
-                                         class="card-img">
-                                    <div class="fullbleed bg-primary-home"
-                                         style="opacity: .5"></div>
-                                    <div class="posts-card-popular__content">
-                                        <div class="card-body d-flex align-items-center">
-                                            <div class="avatar-group flex">
-                                                <div class="avatar avatar-xs"
-                                                     data-toggle="tooltip"
-                                                     data-placement="top"
-                                                     title="Janell D.">
+                                {% if artigo.capa %}
+                                    <div class="card card--elevated posts-card-popular overlay card-group-row__card">
+                                        <img src="{{ artigo.capa.url }}"
+                                            alt=""
+                                            class="card-img">
+                                        <div class="fullbleed bg-primary-home"
+                                            style="opacity: .5"></div>
+                                        <div class="posts-card-popular__content">
+                                            <div class="card-body d-flex align-items-center">
+                                                <div class="avatar-group flex">
+                                                    <div class="avatar avatar-xs"
+                                                        data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Janell D.">
+                                                    </div>
                                                 </div>
+                                                <a style="text-decoration: none;"
+                                                class="d-flex align-items-center"
+                                                href=""><i class="material-icons mr-1"
+                                                    style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
                                             </div>
-                                            <a style="text-decoration: none;"
-                                               class="d-flex align-items-center"
-                                               href=""><i class="material-icons mr-1"
-                                                   style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
-                                        </div>
-                                        <div class="posts-card-popular__title card-body">
-                                            <small class="text-muted text-uppercase">Preview</small>
-                                            <a class="card-title"
-                                               href="{% url 'artigos' artigo.pk %}">{{ artigo.titulo }}</a>
+                                            <div class="posts-card-popular__title card-body">
+                                                <small class="text-muted text-uppercase">Preview</small>
+                                                <a class="card-title"
+                                                href="{% url 'artigos' artigo.pk %}">{{ artigo.titulo }}</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                {% else %}
+                                    <div class="card card--elevated posts-card-popular overlay card-group-row__card">
+                                        <img src="{% static 'home/public/images/pdf_icon.png'%}"
+                                            alt=""
+                                            class="card-img">
+                                        <div class="fullbleed bg-primary-home"
+                                            style="opacity: .5"></div>
+                                        <div class="posts-card-popular__content">
+                                            <div class="card-body d-flex align-items-center">
+                                                <div class="avatar-group flex">
+                                                    <div class="avatar avatar-xs"
+                                                        data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Janell D.">
+                                                    </div>
+                                                </div>
+                                                <a style="text-decoration: none;"
+                                                class="d-flex align-items-center"
+                                                href=""><i class="material-icons mr-1"
+                                                    style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
+                                            </div>
+                                            <div class="posts-card-popular__title card-body">
+                                                <small class="text-muted text-uppercase">Preview</small>
+                                                <a class="card-title"
+                                                href="{% url 'artigos' artigo.pk %}">{{ artigo.titulo }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {%endif%}
 
                             </div>
                             {% endfor %}

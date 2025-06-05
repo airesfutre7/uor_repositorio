@@ -396,21 +396,35 @@
                                 <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay card-group-row__card"
                                     data-toggle="popover"
                                     data-trigger="click">
-
-                                    <a href="student-take-course.html"
-                                    class="card-img-top js-image"
-                                    data-position=""
-                                    data-height="140">
-                                        <img src="{{ livro.capa.url }}"
-                                            alt="course">
-                                        <span class="overlay__content">
-                                            <span class="overlay__action d-flex flex-column text-center">
-                                                <i class="material-icons icon-32pt">play_circle_outline</i>
-                                                <span class="card-title text-white">Resumo</span>
+                                    {% if livro.capa %}
+                                        <a href="student-take-course.html"
+                                        class="card-img-top js-image"
+                                        data-position=""
+                                        data-height="140">
+                                            <img src="{{ livro.capa.url }}"
+                                                alt="course">
+                                            <span class="overlay__content">
+                                                <span class="overlay__action d-flex flex-column text-center">
+                                                    <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                    <span class="card-title text-white">Resumo</span>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </a>
-
+                                        </a>
+                                    {% else %}
+                                        <a href="student-take-course.html"
+                                        class="card-img-top js-image"
+                                        data-position=""
+                                        data-height="140">
+                                            <img src="{% static 'home/public/images/pdf_icon.png' %}"
+                                                alt="course">
+                                            <span class="overlay__content">
+                                                <span class="overlay__action d-flex flex-column text-center">
+                                                    <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                    <span class="card-title text-white">Resumo</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    {% endif %}
                                     <!--<span class="corner-ribbon corner-ribbon--default-right-top corner-ribbon--shadow bg-accent text-white">NEW</span>-->
 
                                     <div class="card-body flex">
@@ -524,20 +538,35 @@
                                 <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay card-group-row__card"
                                     data-toggle="popover"
                                     data-trigger="click">
-
-                                    <a href="student-take-course.html"
-                                    class="card-img-top js-image"
-                                    data-position=""
-                                    data-height="140">
-                                        <img src="{{ artigo.capa.url }}"
-                                            alt="course">
-                                        <span class="overlay__content">
-                                            <span class="overlay__action d-flex flex-column text-center">
-                                                <i class="material-icons icon-32pt">play_circle_outline</i>
-                                                <span class="card-title text-white">Resume</span>
+                                    {% if artigo.capa %}
+                                        <a href="student-take-course.html"
+                                        class="card-img-top js-image"
+                                        data-position=""
+                                        data-height="140">
+                                            <img src="{{ artigo.capa.url }}"
+                                                alt="course">
+                                            <span class="overlay__content">
+                                                <span class="overlay__action d-flex flex-column text-center">
+                                                    <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                    <span class="card-title text-white">Resume</span>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </a>
+                                        </a>
+                                    {% else %}
+                                        <a href="student-take-course.html"
+                                        class="card-img-top js-image"
+                                        data-position=""
+                                        data-height="140">
+                                            <img src="{% static 'home/public/images/pdf_icon.png' %}"
+                                                alt="course">
+                                            <span class="overlay__content">
+                                                <span class="overlay__action d-flex flex-column text-center">
+                                                    <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                    <span class="card-title text-white">Resume</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    {% endif %}
 
                                     <!--<span class="corner-ribbon corner-ribbon--default-right-top corner-ribbon--shadow bg-accent text-white">NEW</span>-->
 
@@ -596,7 +625,45 @@
                             {% endfor %}
 
                         </div>
+                        
+                        <div class="mb-32pt">
 
+                            <ul class="pagination justify-content-start pagination-xsm m-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link"
+                                    href="#"
+                                    aria-label="Previous">
+                                        <span aria-hidden="true"
+                                            class="material-icons">chevron_left</span>
+                                        <span>Prev</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link"
+                                    href="#"
+                                    aria-label="Page 1">
+                                        <span>1</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link"
+                                    href="#"
+                                    aria-label="Page 2">
+                                        <span>2</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link"
+                                    href="#"
+                                    aria-label="Next">
+                                        <span>Next</span>
+                                        <span aria-hidden="true"
+                                            class="material-icons">chevron_right</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
                         {% endif %}
 
                         
@@ -613,21 +680,35 @@
                                 <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay card-group-row__card"
                                     data-toggle="popover"
                                     data-trigger="click">
-
-                                    <a href="student-take-course.html"
-                                    class="card-img-top js-image"
-                                    data-position=""
-                                    data-height="140">
-                                        <img src="{{ monografia.capa.url }}"
-                                            alt="course">
-                                        <span class="overlay__content">
-                                            <span class="overlay__action d-flex flex-column text-center">
-                                                <i class="material-icons icon-32pt">play_circle_outline</i>
-                                                <span class="card-title text-white">Resume</span>
+                                    {% if monografia.capa %}
+                                        <a href="#"
+                                        class="card-img-top js-image"
+                                        data-position=""
+                                        data-height="140">
+                                            <img src="{{ monografia.capa.url }}"
+                                                alt="course">
+                                            <span class="overlay__content">
+                                                <span class="overlay__action d-flex flex-column text-center">
+                                                    <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                    <span class="card-title text-white">Resume</span>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </a>
-
+                                        </a>
+                                    {% else %}
+                                         <a href="#"
+                                        class="card-img-top js-image"
+                                        data-position=""
+                                        data-height="140">
+                                            <img src="{% static 'home/public/images/pdf_icon.png' %}"
+                                                alt="course">
+                                            <span class="overlay__content">
+                                                <span class="overlay__action d-flex flex-column text-center">
+                                                    <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                    <span class="card-title text-white">Resume</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    {%endif%}  
                                     <!--<span class="corner-ribbon corner-ribbon--default-right-top corner-ribbon--shadow bg-accent text-white">NEW</span>-->
 
                                     <div class="card-body flex">
@@ -686,6 +767,44 @@
 
                         </div>
 
+                        <div class="mb-32pt">
+
+                            <ul class="pagination justify-content-start pagination-xsm m-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link"
+                                    href="#"
+                                    aria-label="Previous">
+                                        <span aria-hidden="true"
+                                            class="material-icons">chevron_left</span>
+                                        <span>Prev</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link"
+                                    href="#"
+                                    aria-label="Page 1">
+                                        <span>1</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link"
+                                    href="#"
+                                    aria-label="Page 2">
+                                        <span>2</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link"
+                                    href="#"
+                                    aria-label="Next">
+                                        <span>Next</span>
+                                        <span aria-hidden="true"
+                                            class="material-icons">chevron_right</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
                         {% endif %}
 
                         {% if dissertacoes %}
@@ -701,21 +820,35 @@
                                 <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay card-group-row__card"
                                     data-toggle="popover"
                                     data-trigger="click">
-
-                                    <a href="student-take-course.html"
-                                    class="card-img-top js-image"
-                                    data-position=""
-                                    data-height="140">
-                                        <img src="{{ dissertacao.capa.url }}"
-                                            alt="course">
-                                        <span class="overlay__content">
-                                            <span class="overlay__action d-flex flex-column text-center">
-                                                <i class="material-icons icon-32pt">play_circle_outline</i>
-                                                <span class="card-title text-white">Resumo</span>
+                                    {% if dissertacao.capa %}
+                                        <a href="student-take-course.html"
+                                        class="card-img-top js-image"
+                                        data-position=""
+                                        data-height="140">
+                                            <img src="{{ dissertacao.capa.url }}"
+                                                alt="course">
+                                            <span class="overlay__content">
+                                                <span class="overlay__action d-flex flex-column text-center">
+                                                    <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                    <span class="card-title text-white">Resumo</span>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </a>
-
+                                        </a>
+                                    {% else %}
+                                        <a href="student-take-course.html"
+                                        class="card-img-top js-image"
+                                        data-position=""
+                                        data-height="140">
+                                            <img src="{% static 'home/public/images/pdf_icon.png' %}"
+                                                alt="course">
+                                            <span class="overlay__content">
+                                                <span class="overlay__action d-flex flex-column text-center">
+                                                    <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                    <span class="card-title text-white">Resumo</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    {%endif%} 
                                     <!--<span class="corner-ribbon corner-ribbon--default-right-top corner-ribbon--shadow bg-accent text-white">NEW</span>-->
 
                                     <div class="card-body flex">
@@ -830,21 +963,36 @@
                                 <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay card-group-row__card"
                                     data-toggle="popover"
                                     data-trigger="click">
-
-                                    <a href="student-take-course.html"
-                                    class="card-img-top js-image"
-                                    data-position=""
-                                    data-height="140">
-                                        <img src="{{ tese.capa.url }}"
-                                            alt="course">
-                                        <span class="overlay__content">
-                                            <span class="overlay__action d-flex flex-column text-center">
-                                                <i class="material-icons icon-32pt">play_circle_outline</i>
-                                                <span class="card-title text-white">Resumo</span>
+                                    {% if tese.capa %}
+                                        <a href="student-take-course.html"
+                                        class="card-img-top js-image"
+                                        data-position=""
+                                        data-height="140">
+                                            <img src="{{ tese.capa.url }}"
+                                                alt="course">
+                                            <span class="overlay__content">
+                                                <span class="overlay__action d-flex flex-column text-center">
+                                                    <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                    <span class="card-title text-white">Resumo</span>
+                                                </span>
                                             </span>
-                                        </span>
-                                    </a>
+                                        </a>
+                                    {% else %}
 
+                                        <a href="student-take-course.html"
+                                        class="card-img-top js-image"
+                                        data-position=""
+                                        data-height="140">
+                                            <img src="{% static 'home/public/images/pdf_icon.png' %}"
+                                                alt="course">
+                                            <span class="overlay__content">
+                                                <span class="overlay__action d-flex flex-column text-center">
+                                                    <i class="material-icons icon-32pt">play_circle_outline</i>
+                                                    <span class="card-title text-white">Resumo</span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    {%endif%}
                                     <!--<span class="corner-ribbon corner-ribbon--default-right-top corner-ribbon--shadow bg-accent text-white">NEW</span>-->
 
                                     <div class="card-body flex">
@@ -1270,7 +1418,7 @@
                                    data-toggle="collapse"
                                    href="#enterprise_menu">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">donut_large</span>
-                                    Faculdades
+                                    Unidade Orgânica
                                     <span class="ml-auto sidebar-menu-toggle-icon"></span>
                                 </a>
                                 <ul class="sidebar-submenu collapse sm-indent"

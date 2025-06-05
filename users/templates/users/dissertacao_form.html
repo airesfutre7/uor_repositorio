@@ -282,10 +282,17 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-header"><strong>Account</strong></div>
                                     <a class="dropdown-item"
-                                    href="{% url 'edit_perfil' %}">Editar perfil</a>
+                                    href="{% url 'perfil' %}">Perfil</a>
 
-                                    <a class="dropdown-item"
-                                    href="{% url 'logout' %}">Logout</a>
+                                    <form method="post" action="{% url 'logout' %}">
+                                        {% csrf_token %}
+                                        <a class="dropdown-item">
+                                        <button type="submit" class="btn btn-light">Logout</button>
+                                        </a>
+                                    </form>
+
+                                    <!--<a class="dropdown-item"
+                                    href="{% url 'logout' %}">Logout</a> -->
                                 </div>
                             </div>
                         </div>

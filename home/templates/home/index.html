@@ -99,7 +99,7 @@
 
                         <span class="avatar avatar-sm navbar-brand-icon mr-0 mr-lg-8pt">
 
-                            <span class="avatar-title rounded "><img src="{% static 'home/public/images/uor_logo.png' %}"
+                            <span class="avatar-title rounded "><img src="{% static 'home/public/images/uor_logo3.png' %}"
                                      alt="logo"
                                      class="img-fluid-home" /></span>
 
@@ -340,12 +340,18 @@
                             <h2 class="text-white text-shadow">Repositório de acesso aberto da UÓR</h2>
                             <p class="lead measure-hero-lead mx-auto text-white text-shadow mb-48pt"></p>
 
-                            <a href="{% url 'monografias' %}"
-                               class="btn btn-lg btn-white btn--raised mb-16pt">Pesquisar</a>
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'monografias' %}"
+                                class="btn btn-lg btn-white btn--raised mb-16pt">Pesquisar</a>
 
-                            <!-- <p class="mb-0"><a href=""
-                                   class="text-white text-shadow"><strong>Are you a teacher?</strong></a></p> -->
+                                <!-- <p class="mb-0"><a href=""
+                                    class="text-white text-shadow"><strong>Are you a teacher?</strong></a></p> -->
+                            {% else %}
 
+                                <a href="{% url 'login' %}"
+                                class="btn btn-lg btn-white btn--raised mb-16pt">Pesquisar</a>
+
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -387,7 +393,7 @@
                 <div class="page-section border-bottom-2">
                     <div class="container page__container">
                         <div class="page-separator">
-                            <div class="page-separator__text">Produção Científica/Academica </div>
+                            <div class="page-separator__text">Produção Científica/Académica </div>
                         </div>
 
                         <div class="row card-group-row">
@@ -401,24 +407,48 @@
                                     <div class="card-body d-flex flex-column">
                                         <div class="d-flex align-items-center">
                                             <div class="flex">
-                                                <a href="{% url 'monografias' %}">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="rounded mr-12pt z-0 o-hidden">
-                                                            <div class="overlay">
-                                                                <img src="{% static 'home/public/images/paths/react_40x40@2x.png' %}"
-                                                                    width="40"
-                                                                    height="40"
-                                                                    alt="Angular"
-                                                                    class="rounded">
-                                                                
+                                                
+                                                {% if user.is_authenticated %}
+
+                                                    <a href="{% url 'monografias' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/react_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Monografias</div>
+                                                                <p class="flex text-50 lh-1 mb-0"><small>50+ Tópicos</small></p>
                                                             </div>
                                                         </div>
-                                                        <div class="flex">
-                                                            <div class="card-title">Monografias</div>
-                                                            <p class="flex text-50 lh-1 mb-0"><small>50+ Tópicos</small></p>
+                                                    </a>
+                                                {% else %}
+                                                     <a href="{% url 'login' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/react_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Monografias</div>
+                                                                <p class="flex text-50 lh-1 mb-0"><small>50+ Tópicos</small></p>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </a>
+                                                    </a>
+
+                                                {% endif %}
                                             </div>
 
                                             <a href="student-path.html"
@@ -446,24 +476,47 @@
                                     <div class="card-body d-flex flex-column">
                                         <div class="d-flex align-items-center">
                                             <div class="flex">
-                                                <a href="{% url 'dissertacao' %}">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="rounded mr-12pt z-0 o-hidden">
-                                                            <div class="overlay">
-                                                                <img src="{% static 'home/public/images/paths/devops_40x40@2x.png' %}"
-                                                                    width="40"
-                                                                    height="40"
-                                                                    alt="Angular"
-                                                                    class="rounded">
-                                                                
+                                                {% if user.is_authenticated %}
+
+                                                    <a href="{% url 'dissertacao' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/devops_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Dissertações</div>
+                                                                <p class="flex text-50 lh-1 mb-0"><small>18+ Tópicos</small></p>
                                                             </div>
                                                         </div>
-                                                        <div class="flex">
-                                                            <div class="card-title">Dissertação</div>
-                                                            <p class="flex text-50 lh-1 mb-0"><small>18+ Tópicos</small></p>
+                                                    </a>
+                                                {% else %}
+                                                    <a href="{% url 'login' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/devops_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Dissertações</div>
+                                                                <p class="flex text-50 lh-1 mb-0"><small>18+ Tópicos</small></p>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </a>
+                                                    </a>
+                                                {% endif %}
+
                                             </div>
 
                                             <a href="student-path.html"
@@ -490,24 +543,47 @@
                                     <div class="card-body d-flex flex-column">
                                         <div class="d-flex align-items-center">
                                             <div class="flex">
-                                                <a href="{% url 'tese' %}">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="rounded mr-12pt z-0 o-hidden">
-                                                            <div class="overlay">
-                                                                <img src="{% static 'home/public/images/paths/redis_40x40@2x.png' %}"
-                                                                    width="40"
-                                                                    height="40"
-                                                                    alt="Angular"
-                                                                    class="rounded">
-                                                            
+                                                {% if user.is_authenticated %}
+
+                                                    <a href="{% url 'tese' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/redis_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Teses</div>
+                                                                <p class="flex text-50 lh-1 mb-0"><small>18+ Teses</small></p>
                                                             </div>
                                                         </div>
-                                                        <div class="flex">
-                                                            <div class="card-title">Teses</div>
-                                                            <p class="flex text-50 lh-1 mb-0"><small>18+ Teses</small></p>
+                                                    </a>
+                                                {% else %}
+                                                    <a href="{% url 'login' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/redis_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Teses</div>
+                                                                <p class="flex text-50 lh-1 mb-0"><small>18+ Teses</small></p>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </a>
+                                                    </a>
+                                                {% endif %}
+                                                    
                                             </div>
 
                                             <a href="student-path.html"
@@ -539,24 +615,47 @@
                                     <div class="card-body d-flex flex-column">
                                         <div class="d-flex align-items-center">
                                             <div class="flex">
-                                                <a href="{% url 'artigo_list' %}">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="rounded mr-12pt z-0 o-hidden">
-                                                            <div class="overlay">
-                                                                <img src="{% static 'home/public/images/paths/mailchimp_40x40@2x.png' %}"
-                                                                    width="40"
-                                                                    height="40"
-                                                                    alt="Angular"
-                                                                    class="rounded">
-                                                                
+                                                {% if user.is_authenticated %}
+
+                                                    <a href="{% url 'artigo_list' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/mailchimp_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Artigos</div>
+                                                                <p class="flex text-50 lh-1 mb-0"><small>18+ Temas</small></p>
                                                             </div>
                                                         </div>
-                                                        <div class="flex">
-                                                            <div class="card-title">Artigos</div>
-                                                            <p class="flex text-50 lh-1 mb-0"><small>18+ Temas</small></p>
-                                                        </div>
-                                                    </div>
                                                     </a>
+                                                {% else %}
+                                                    <a href="{% url 'login' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/mailchimp_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Artigos</div>
+                                                                <p class="flex text-50 lh-1 mb-0"><small>18+ Temas</small></p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                {% endif %}
+
                                             </div>
 
                                             <a href="student-path.html"
@@ -582,24 +681,46 @@
                                     <div class="card-body d-flex flex-column">
                                         <div class="d-flex align-items-center">
                                             <div class="flex">
-                                                <a href="{% url 'livro' %}">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="rounded mr-12pt z-0 o-hidden">
-                                                            <div class="overlay">
-                                                                <img src="{% static 'home/public/images/paths/swift_40x40@2x.png' %}"
-                                                                    width="40"
-                                                                    height="40"
-                                                                    alt="Angular"
-                                                                    class="rounded">
-                                                                
+                                                {% if user.is_authenticated %}
+
+                                                    <a href="{% url 'livro' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/swift_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Livros</div>
+                                                                <p class="flex text-50 lh-1 mb-0"><small>18+ Livros</small></p>
                                                             </div>
                                                         </div>
-                                                        <div class="flex">
-                                                            <div class="card-title">Livros</div>
-                                                            <p class="flex text-50 lh-1 mb-0"><small>18+ Livros</small></p>
+                                                    </a>
+                                                {% else %}
+                                                    <a href="{% url 'login' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/swift_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Livros</div>
+                                                                <p class="flex text-50 lh-1 mb-0"><small>18+ Livros</small></p>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </a>
+                                                    </a>
+                                                {% endif %}
                                             </div>
 
                                             <a href="student-path.html"
@@ -625,24 +746,48 @@
                                     <div class="card-body d-flex flex-column">
                                         <div class="d-flex align-items-center">
                                             <div class="flex">
-                                                <a href="https://publicacoes.uor.edu.ao/index.php/sapientiae/index">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="rounded mr-12pt z-0 o-hidden">
-                                                            <div class="overlay">
-                                                                <img src="{% static 'home/public/images/paths/wordpress_40x40@2x.png' %}"
-                                                                    width="40"
-                                                                    height="40"
-                                                                    alt="Angular"
-                                                                    class="rounded">
-                                                                
+                                                {% if user.is_authenticated %}
+
+                                                    <a href="https://publicacoes.uor.edu.ao/index.php/sapientiae/index">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/wordpress_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Revista UÓR</div>
+                                                                <!--<p class="flex text-50 lh-1 mb-0"><small>18 courses</small></p>-->
                                                             </div>
                                                         </div>
-                                                        <div class="flex">
-                                                            <div class="card-title">Revista UÓR</div>
-                                                            <!--<p class="flex text-50 lh-1 mb-0"><small>18 courses</small></p>-->
+                                                    </a>
+                                                {% else %}
+
+                                                     <a href="{% url 'login' %}">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded mr-12pt z-0 o-hidden">
+                                                                <div class="overlay">
+                                                                    <img src="{% static 'home/public/images/paths/wordpress_40x40@2x.png' %}"
+                                                                        width="40"
+                                                                        height="40"
+                                                                        alt="Angular"
+                                                                        class="rounded">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex">
+                                                                <div class="card-title">Revista UÓR</div>
+                                                                <!--<p class="flex text-50 lh-1 mb-0"><small>18 courses</small></p>-->
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </a>
+                                                    </a>
+                                                    
+                                                {% endif %}    
                                             </div>
 
                                             <a href="student-path.html"
@@ -678,64 +823,130 @@
 
                             <div class="col-md-6 col-lg-4 card-group-row__col">
 
-                                {% if artigo.capa %}
-                                    <div class="card card--elevated posts-card-popular overlay card-group-row__card">
-                                        <img src="{{ artigo.capa.url }}"
-                                            alt=""
-                                            class="card-img">
-                                        <div class="fullbleed bg-primary-home"
-                                            style="opacity: .5"></div>
-                                        <div class="posts-card-popular__content">
-                                            <div class="card-body d-flex align-items-center">
-                                                <div class="avatar-group flex">
-                                                    <div class="avatar avatar-xs"
-                                                        data-toggle="tooltip"
-                                                        data-placement="top"
-                                                        title="Janell D.">
-                                                    </div>
-                                                </div>
-                                                <a style="text-decoration: none;"
-                                                class="d-flex align-items-center"
-                                                href=""><i class="material-icons mr-1"
-                                                    style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
-                                            </div>
-                                            <div class="posts-card-popular__title card-body">
-                                                <small class="text-muted text-uppercase">Preview</small>
-                                                <a class="card-title"
-                                                href="{% url 'artigos' artigo.pk %}">{{ artigo.titulo }}</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% else %}
-                                    <div class="card card--elevated posts-card-popular overlay card-group-row__card">
-                                        <img src="{% static 'home/public/images/pdf_icon.png'%}"
-                                            alt=""
-                                            class="card-img">
-                                        <div class="fullbleed bg-primary-home"
-                                            style="opacity: .5"></div>
-                                        <div class="posts-card-popular__content">
-                                            <div class="card-body d-flex align-items-center">
-                                                <div class="avatar-group flex">
-                                                    <div class="avatar avatar-xs"
-                                                        data-toggle="tooltip"
-                                                        data-placement="top"
-                                                        title="Janell D.">
-                                                    </div>
-                                                </div>
-                                                <a style="text-decoration: none;"
-                                                class="d-flex align-items-center"
-                                                href=""><i class="material-icons mr-1"
-                                                    style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
-                                            </div>
-                                            <div class="posts-card-popular__title card-body">
-                                                <small class="text-muted text-uppercase">Preview</small>
-                                                <a class="card-title"
-                                                href="{% url 'artigos' artigo.pk %}">{{ artigo.titulo }}</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {%endif%}
 
+                                {% if user.is_authenticated %}
+                                    
+                                    {% if artigo.capa %}
+
+                                        <div class="card card--elevated posts-card-popular overlay card-group-row__card">
+                                            <img src="{{ artigo.capa.url }}"
+                                                alt=""
+                                                class="card-img">
+                                            <div class="fullbleed bg-primary-home"
+                                                style="opacity: .5"></div>
+                                            <div class="posts-card-popular__content">
+                                                <div class="card-body d-flex align-items-center">
+                                                    <div class="avatar-group flex">
+                                                        <div class="avatar avatar-xs"
+                                                            data-toggle="tooltip"
+                                                            data-placement="top"
+                                                            title="Janell D.">
+                                                        </div>
+                                                    </div>
+                                                    <a style="text-decoration: none;"
+                                                    class="d-flex align-items-center"
+                                                    href=""><i class="material-icons mr-1"
+                                                        style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
+                                                </div>
+                                                <div class="posts-card-popular__title card-body">
+                                                    <small class="text-muted text-uppercase">Preview</small>
+                                                    <a class="card-title"
+                                                    href="{% url 'artigos' artigo.pk %}">{{ artigo.titulo }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="card card--elevated posts-card-popular overlay card-group-row__card">
+                                            <img src="{% static 'home/public/images/pdf_icon.png'%}"
+                                                alt=""
+                                                class="card-img">
+                                            <div class="fullbleed bg-primary-home"
+                                                style="opacity: .5"></div>
+                                            <div class="posts-card-popular__content">
+                                                <div class="card-body d-flex align-items-center">
+                                                    <div class="avatar-group flex">
+                                                        <div class="avatar avatar-xs"
+                                                            data-toggle="tooltip"
+                                                            data-placement="top"
+                                                            title="Janell D.">
+                                                        </div>
+                                                    </div>
+                                                    <a style="text-decoration: none;"
+                                                    class="d-flex align-items-center"
+                                                    href=""><i class="material-icons mr-1"
+                                                        style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
+                                                </div>
+                                                <div class="posts-card-popular__title card-body">
+                                                    <small class="text-muted text-uppercase">Preview</small>
+                                                    <a class="card-title"
+                                                    href="{% url 'artigos' artigo.pk %}">{{ artigo.titulo }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {%endif%}
+
+                                {% else %}
+                                    
+                                    {% if artigo.capa %}
+
+                                        <div class="card card--elevated posts-card-popular overlay card-group-row__card">
+                                            <img src="{{ artigo.capa.url }}"
+                                                alt=""
+                                                class="card-img">
+                                            <div class="fullbleed bg-primary-home"
+                                                style="opacity: .5"></div>
+                                            <div class="posts-card-popular__content">
+                                                <div class="card-body d-flex align-items-center">
+                                                    <div class="avatar-group flex">
+                                                        <div class="avatar avatar-xs"
+                                                            data-toggle="tooltip"
+                                                            data-placement="top"
+                                                            title="Janell D.">
+                                                        </div>
+                                                    </div>
+                                                    <a style="text-decoration: none;"
+                                                    class="d-flex align-items-center"
+                                                    href=""><i class="material-icons mr-1"
+                                                        style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
+                                                </div>
+                                                <div class="posts-card-popular__title card-body">
+                                                    <small class="text-muted text-uppercase">Preview</small>
+                                                    <a class="card-title"
+                                                    href="{% url 'login' %}">{{ artigo.titulo }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="card card--elevated posts-card-popular overlay card-group-row__card">
+                                            <img src="{% static 'home/public/images/pdf_icon.png'%}"
+                                                alt=""
+                                                class="card-img">
+                                            <div class="fullbleed bg-primary-home"
+                                                style="opacity: .5"></div>
+                                            <div class="posts-card-popular__content">
+                                                <div class="card-body d-flex align-items-center">
+                                                    <div class="avatar-group flex">
+                                                        <div class="avatar avatar-xs"
+                                                            data-toggle="tooltip"
+                                                            data-placement="top"
+                                                            title="Janell D.">
+                                                        </div>
+                                                    </div>
+                                                    <a style="text-decoration: none;"
+                                                    class="d-flex align-items-center"
+                                                    href=""><i class="material-icons mr-1"
+                                                        style="font-size: inherit;">remove_red_eye</i> <small>327</small></a>
+                                                </div>
+                                                <div class="posts-card-popular__title card-body">
+                                                    <small class="text-muted text-uppercase">Preview</small>
+                                                    <a class="card-title"
+                                                    href="{% url 'login' %}">{{ artigo.titulo }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {%endif%}
+
+                                {% endif %}        
                             </div>
                             {% endfor %}
 
@@ -831,89 +1042,171 @@
                                 <div class="mdk-carousel__content">
 
                                     <div class="col-12 col-sm-6">
+                                        {% if user.is_authenticated %}
 
-                                        <a class="card border-0 mb-0"
-                                           href="https://www.google.com/">
-                                            <img src="{% static 'home/public/images/achievements/flinto.png' %}"
-                                                 alt="Flinto"
-                                                 class="card-img"
-                                                 style="max-height: 100%; width: initial;">
-                                            <div class="fullbleed bg-primary"
-                                                 style="opacity: .5;"></div>
-                                            <span class="card-body d-flex flex-column align-items-center justify-content-center fullbleed">
-                                                <span class="row flex-nowrap">
-                                                    <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
-                                                        <span class="h5 text-white text-uppercase font-weight-normal m-0 d-block">Conferência 1</span>
-                                                        <span class="text-white-60 d-block mb-24pt">Jun 5, 2018</span>
+                                            <a class="card border-0 mb-0"
+                                            href="https://www.google.com/">
+                                                <img src="{% static 'home/public/images/achievements/flinto.png' %}"
+                                                    alt="Flinto"
+                                                    class="card-img"
+                                                    style="max-height: 100%; width: initial;">
+                                                <div class="fullbleed bg-primary"
+                                                    style="opacity: .5;"></div>
+                                                <span class="card-body d-flex flex-column align-items-center justify-content-center fullbleed">
+                                                    <span class="row flex-nowrap">
+                                                        <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
+                                                            <span class="h5 text-white text-uppercase font-weight-normal m-0 d-block">Conferência 1</span>
+                                                            <span class="text-white-60 d-block mb-24pt">Jun 5, 2018</span>
+                                                        </span>
+                                                        <span class="col d-flex flex-column">
+                                                            <span class="text-right flex mb-16pt">
+                                                                <img src="{% static 'home/public/images/paths/flinto_40x40@2x.png' %}"
+                                                                    width="64"
+                                                                    alt="Flinto"
+                                                                    class="rounded">
+                                                            </span>
+                                                        </span>
                                                     </span>
-                                                    <span class="col d-flex flex-column">
-                                                        <span class="text-right flex mb-16pt">
-                                                            <img src="{% static 'home/public/images/paths/flinto_40x40@2x.png' %}"
-                                                                 width="64"
-                                                                 alt="Flinto"
-                                                                 class="rounded">
+                                                    <span class="row flex-nowrap">
+                                                        <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
+                                                            <img src="{% static 'home/public/images/illustration/achievement/128/white.png' %}"
+                                                                width="64"
+                                                                alt="achievement">
+                                                        </span>
+                                                        <span class="col d-flex flex-column">
+                                                            <span>
+                                                                <span class="card-title text-white mb-4pt d-block">Flinto</span>
+                                                                <span class="text-white-60">Introduction to The App Design Application</span>
+                                                            </span>
                                                         </span>
                                                     </span>
                                                 </span>
-                                                <span class="row flex-nowrap">
-                                                    <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
-                                                        <img src="{% static 'home/public/images/illustration/achievement/128/white.png' %}"
-                                                             width="64"
-                                                             alt="achievement">
+                                            </a>
+                                        {% else %}
+
+                                             <a class="card border-0 mb-0"
+                                            href="{% url 'login' %}">
+                                                <img src="{% static 'home/public/images/achievements/flinto.png' %}"
+                                                    alt="Flinto"
+                                                    class="card-img"
+                                                    style="max-height: 100%; width: initial;">
+                                                <div class="fullbleed bg-primary"
+                                                    style="opacity: .5;"></div>
+                                                <span class="card-body d-flex flex-column align-items-center justify-content-center fullbleed">
+                                                    <span class="row flex-nowrap">
+                                                        <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
+                                                            <span class="h5 text-white text-uppercase font-weight-normal m-0 d-block">Conferência 1</span>
+                                                            <span class="text-white-60 d-block mb-24pt">Jun 5, 2018</span>
+                                                        </span>
+                                                        <span class="col d-flex flex-column">
+                                                            <span class="text-right flex mb-16pt">
+                                                                <img src="{% static 'home/public/images/paths/flinto_40x40@2x.png' %}"
+                                                                    width="64"
+                                                                    alt="Flinto"
+                                                                    class="rounded">
+                                                            </span>
+                                                        </span>
                                                     </span>
-                                                    <span class="col d-flex flex-column">
-                                                        <span>
-                                                            <span class="card-title text-white mb-4pt d-block">Flinto</span>
-                                                            <span class="text-white-60">Introduction to The App Design Application</span>
+                                                    <span class="row flex-nowrap">
+                                                        <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
+                                                            <img src="{% static 'home/public/images/illustration/achievement/128/white.png' %}"
+                                                                width="64"
+                                                                alt="achievement">
+                                                        </span>
+                                                        <span class="col d-flex flex-column">
+                                                            <span>
+                                                                <span class="card-title text-white mb-4pt d-block">Flinto</span>
+                                                                <span class="text-white-60">Introduction to The App Design Application</span>
+                                                            </span>
                                                         </span>
                                                     </span>
                                                 </span>
-                                            </span>
-                                        </a>
+                                            </a>
+                                        {% endif %}
 
                                     </div>
 
                                     <div class="col-12 col-sm-6">
+                                        {% if user.is_authenticated %}
 
-                                        <a class="card border-0 mb-0"
-                                           href="https://www.google.com/">
-                                            <img src="{% static 'home/public/images/achievements/angular.png' %}"
-                                                 alt="Angular fundamentals"
-                                                 class="card-img"
-                                                 style="max-height: 100%; width: initial;">
-                                            <div class="fullbleed bg-primary"
-                                                 style="opacity: .5;"></div>
-                                            <span class="card-body d-flex flex-column align-items-center justify-content-center fullbleed">
-                                                <span class="row flex-nowrap">
-                                                    <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
-                                                        <span class="h5 text-white text-uppercase font-weight-normal m-0 d-block">Conferência 2</span>
-                                                        <span class="text-white-60 d-block mb-24pt">Jun 5, 2018</span>
+                                            <a class="card border-0 mb-0"
+                                            href="https://www.google.com/">
+                                                <img src="{% static 'home/public/images/achievements/angular.png' %}"
+                                                    alt="Angular fundamentals"
+                                                    class="card-img"
+                                                    style="max-height: 100%; width: initial;">
+                                                <div class="fullbleed bg-primary"
+                                                    style="opacity: .5;"></div>
+                                                <span class="card-body d-flex flex-column align-items-center justify-content-center fullbleed">
+                                                    <span class="row flex-nowrap">
+                                                        <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
+                                                            <span class="h5 text-white text-uppercase font-weight-normal m-0 d-block">Conferência 2</span>
+                                                            <span class="text-white-60 d-block mb-24pt">Jun 5, 2018</span>
+                                                        </span>
+                                                        <span class="col d-flex flex-column">
+                                                            <span class="text-right flex mb-16pt">
+                                                                <img src="{% static 'home/public/images/paths/angular_64x64.png' %}"
+                                                                    width="64"
+                                                                    alt="Angular fundamentals"
+                                                                    class="rounded">
+                                                            </span>
+                                                        </span>
                                                     </span>
-                                                    <span class="col d-flex flex-column">
-                                                        <span class="text-right flex mb-16pt">
-                                                            <img src="{% static 'home/public/images/paths/angular_64x64.png' %}"
-                                                                 width="64"
-                                                                 alt="Angular fundamentals"
-                                                                 class="rounded">
+                                                    <span class="row flex-nowrap">
+                                                        <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
+                                                            <img src="{% static 'home/public/images/illustration/achievement/128/white.png' %}"
+                                                                width="64"
+                                                                alt="achievement">
+                                                        </span>
+                                                        <span class="col d-flex flex-column">
+                                                            <span>
+                                                                <span class="card-title text-white mb-4pt d-block">Angular fundamentals</span>
+                                                                <span class="text-white-60">Creating and Communicating Between Angular Components</span>
+                                                            </span>
                                                         </span>
                                                     </span>
                                                 </span>
-                                                <span class="row flex-nowrap">
-                                                    <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
-                                                        <img src="{% static 'home/public/images/illustration/achievement/128/white.png' %}"
-                                                             width="64"
-                                                             alt="achievement">
+                                            </a>
+                                        {% else %}
+                                            <a class="card border-0 mb-0"
+                                            href="{% url 'login' %}">
+                                                <img src="{% static 'home/public/images/achievements/angular.png' %}"
+                                                    alt="Angular fundamentals"
+                                                    class="card-img"
+                                                    style="max-height: 100%; width: initial;">
+                                                <div class="fullbleed bg-primary"
+                                                    style="opacity: .5;"></div>
+                                                <span class="card-body d-flex flex-column align-items-center justify-content-center fullbleed">
+                                                    <span class="row flex-nowrap">
+                                                        <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
+                                                            <span class="h5 text-white text-uppercase font-weight-normal m-0 d-block">Conferência 2</span>
+                                                            <span class="text-white-60 d-block mb-24pt">Jun 5, 2018</span>
+                                                        </span>
+                                                        <span class="col d-flex flex-column">
+                                                            <span class="text-right flex mb-16pt">
+                                                                <img src="{% static 'home/public/images/paths/angular_64x64.png' %}"
+                                                                    width="64"
+                                                                    alt="Angular fundamentals"
+                                                                    class="rounded">
+                                                            </span>
+                                                        </span>
                                                     </span>
-                                                    <span class="col d-flex flex-column">
-                                                        <span>
-                                                            <span class="card-title text-white mb-4pt d-block">Angular fundamentals</span>
-                                                            <span class="text-white-60">Creating and Communicating Between Angular Components</span>
+                                                    <span class="row flex-nowrap">
+                                                        <span class="col-auto text-center d-flex flex-column justify-content-center align-items-center">
+                                                            <img src="{% static 'home/public/images/illustration/achievement/128/white.png' %}"
+                                                                width="64"
+                                                                alt="achievement">
+                                                        </span>
+                                                        <span class="col d-flex flex-column">
+                                                            <span>
+                                                                <span class="card-title text-white mb-4pt d-block">Angular fundamentals</span>
+                                                                <span class="text-white-60">Creating and Communicating Between Angular Components</span>
+                                                            </span>
                                                         </span>
                                                     </span>
                                                 </span>
-                                            </span>
-                                        </a>
-
+                                            </a>
+                                        {% endif %}  
                                     </div>
 
                                 </div>
@@ -1252,7 +1545,7 @@
 
                             <span class="avatar avatar-xl sidebar-brand-icon h-auto">
 
-                                        <span class="rounded"><img src="{% static 'home/public/images/uor_logo.png' %}"
+                                        <span class="rounded"><img src="{% static 'home/public/images/uor_logo3.png' %}"
                                                 class="img-fluid-home"
                                                 alt="logo" /></span>
 
@@ -1261,10 +1554,17 @@
                             <!--<span>UÓR</span> -->
                         </a>
 
-                        <div class="sidebar-heading">Student</div>
                         <ul class="sidebar-menu">
 
-                            <li class="sidebar-menu-item active">
+                            <!--<li class="sidebar-menu-item active">
+                                <a class="sidebar-menu-button"
+                                    href="{% url 'home' %}">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
+                                    <span class="sidebar-menu-text">Home</span>
+                                </a>
+                            </li> -->
+
+                            <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
                                     href="{% url 'home' %}">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
@@ -1307,19 +1607,19 @@
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
                                             href="{% url 'engenharia'%}">
-                                            <span class="sidebar-menu-text">Faculdade de Engenharia</span>
+                                            <span class="sidebar-menu-text">Faculdade de Ciência e Tecnologia</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
                                             href="{% url 'gestao'%}">
-                                            <span class="sidebar-menu-text">Faculdade de Gestão</span>
+                                            <span class="sidebar-menu-text">Faculdade de Ciências Socias e Humanas</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
                                             href="{% url 'economia'%}">
-                                            <span class="sidebar-menu-text">Faculdade de Economia</span>
+                                            <span class="sidebar-menu-text">Faculdade de Ciências Economicas</span>
                                         </a>
                                     </li>
                                     

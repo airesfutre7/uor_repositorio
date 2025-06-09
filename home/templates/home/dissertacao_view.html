@@ -384,7 +384,7 @@
                                 </div>-->
                                
                                 {% if dissertacao  %} 
-                                <iframe src="{{ dissertacao.ficheiro.url }}" width="80%" height="500px"></iframe>
+                                <iframe src="{{ dissertacao.ficheiro.url }}#toolbar=0" width="80%" height="500px"></iframe>
                                 {% endif %}
                                 
                                 <div class="measure-lead-max">
@@ -505,8 +505,7 @@
 
             <!-- Drawer -->
 
-            <div class="mdk-drawer js-mdk-drawer"
-            id="default-drawer">
+            <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
                 <div class="mdk-drawer__content">
                     <div class="sidebar sidebar-black-dodger-blue sidebar-left"
                             data-perfect-scrollbar>
@@ -521,19 +520,26 @@
 
                             <span class="avatar avatar-xl sidebar-brand-icon h-auto">
 
-                                <span class="rounded"><img src="{% static 'home/public/images/uor_logo.png' %}"
-                                            class="img-fluid"
-                                            alt="logo" /></span>
+                                        <span class="rounded"><img src="{% static 'home/public/images/uor_logo3.png' %}"
+                                                class="img-fluid-home"
+                                                alt="logo" /></span>
 
-                            </span>
+                                    </span>
 
                             <!--<span>UÓR</span> -->
                         </a>
 
-                        <div class="sidebar-heading">Student</div>
                         <ul class="sidebar-menu">
 
-                            <li class="sidebar-menu-item active">
+                            <!--<li class="sidebar-menu-item active">
+                                <a class="sidebar-menu-button"
+                                    href="{% url 'home' %}">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
+                                    <span class="sidebar-menu-text">Home</span>
+                                </a>
+                            </li> -->
+
+                            <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
                                     href="{% url 'home' %}">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
@@ -562,7 +568,7 @@
                                     data-toggle="collapse"
                                     href="#enterprise_menu">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">donut_large</span>
-                                    Unidade Orgânica
+                                    Unidade Organica
                                     <span class="ml-auto sidebar-menu-toggle-icon"></span>
                                 </a>
                                 <ul class="sidebar-submenu collapse sm-indent"
@@ -576,19 +582,19 @@
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
                                             href="{% url 'engenharia'%}">
-                                            <span class="sidebar-menu-text">Faculdade de Engenharia</span>
+                                            <span class="sidebar-menu-text">Faculdade de Ciência e Tecnologia</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
                                             href="{% url 'gestao'%}">
-                                            <span class="sidebar-menu-text">Faculdade de Gestão</span>
+                                            <span class="sidebar-menu-text">Faculdade de Ciências Socias e Humanas</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
                                             href="{% url 'economia'%}">
-                                            <span class="sidebar-menu-text">Faculdade de Economia</span>
+                                            <span class="sidebar-menu-text">Faculdade de Ciências Economicas</span>
                                         </a>
                                     </li>
                                     
@@ -651,7 +657,7 @@
                                         <span class="sidebar-menu-text">Inventory</span>
                                         </a>
                                         </li> -->
-                                </ul>
+                                
                                 
                                 <!--<li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
@@ -723,12 +729,12 @@
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">assignment_turned_in</span>
                                     <span class="sidebar-menu-text">Skill Result</span>
                                 </a>
-                            </li>
+                            </li> -->
 
-                        </ul>    -->  
+                        </ul>   
                         <li class="sidebar-menu-item">
                             <a class="sidebar-menu-button"
-                                href="student-dashboard.html">
+                                href="#">
                                 <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_box</span>
                                 <span class="sidebar-menu-text">Galeria</span>
                             </a>

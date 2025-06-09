@@ -1369,61 +1369,58 @@
 
             <!-- Drawer -->
 
-           <div class="mdk-drawer js-mdk-drawer"
-                 id="default-drawer">
+            <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
                 <div class="mdk-drawer__content">
                     <div class="sidebar sidebar-black-dodger-blue sidebar-left"
-                         data-perfect-scrollbar>
+                            data-perfect-scrollbar>
 
-                        <!-- Sidebar Content 
+                        <!-- Sidebar Content -->
 
-                        <div class="d-flex align-items-center navbar-height">
-                            <form action="index.html"
-                                  class="search-form search-form--black mx-16pt pr-0 pl-16pt">
-                                <input type="text"
-                                       class="form-control pl-0"
-                                       placeholder="Search">
-                                <button class="btn"
-                                        type="submit"><i class="material-icons">Pesquisar</i></button>
-                            </form>
-                        </div>-->
+                
 
                         <a href="{% url 'home' %}"
-                           class="sidebar-brand ">
+                            class="sidebar-brand ">
                             <!-- <img class="sidebar-brand-icon" src="../../public/images/illustration/student/128/white.svg" alt="Luma"> -->
 
                             <span class="avatar avatar-xl sidebar-brand-icon h-auto">
 
-                                <span class="rounded"><img src="{% static 'home/public/images/uor_logo.png' %}"
-                                         class="img-fluid-home"
-                                         alt="logo" /></span>
+                                        <span class="rounded"><img src="{% static 'home/public/images/uor_logo3.png' %}"
+                                                class="img-fluid-home"
+                                                alt="logo" /></span>
 
-                            </span>
+                                    </span>
 
                             <!--<span>UÓR</span> -->
                         </a>
 
-                        <div class="sidebar-heading">Home</div>
                         <ul class="sidebar-menu">
 
-                            <li class="sidebar-menu-item active">
+                            <!--<li class="sidebar-menu-item active">
                                 <a class="sidebar-menu-button"
-                                   href="{% url 'home' %}">
+                                    href="{% url 'home' %}">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
+                                    <span class="sidebar-menu-text">Home</span>
+                                </a>
+                            </li> -->
+
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                    href="{% url 'home' %}">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
                                     <span class="sidebar-menu-text">Home</span>
                                 </a>
                             </li>
-                           
+                            
                             <!--<li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-dashboard.html">
+                                    href="student-dashboard.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_box</span>
                                     <span class="sidebar-menu-text">Student Dashboard</span>
                                 </a>
                             </li> 
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-my-courses.html">
+                                    href="student-my-courses.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">search</span>
                                     <span class="sidebar-menu-text">My Courses</span>
                                 </a>
@@ -1432,124 +1429,124 @@
 
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button js-sidebar-collapse"
-                                   data-toggle="collapse"
-                                   href="#enterprise_menu">
+                                    data-toggle="collapse"
+                                    href="#enterprise_menu">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">donut_large</span>
-                                    Faculdades
+                                    Unidade Organica
                                     <span class="ml-auto sidebar-menu-toggle-icon"></span>
                                 </a>
                                 <ul class="sidebar-submenu collapse sm-indent"
                                     id="enterprise_menu">
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
-                                           href="{% url 'direito' %}">
+                                            href="{% url 'direito'%}">
                                             <span class="sidebar-menu-text">Faculdade de Direito</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
-                                           href="{% url 'engenharia' %}">
-                                            <span class="sidebar-menu-text">Faculdade de Engenharia</span>
+                                            href="{% url 'engenharia'%}">
+                                            <span class="sidebar-menu-text">Faculdade de Ciência e Tecnologia</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
-                                           href="{% url 'gestao' %}">
-                                            <span class="sidebar-menu-text">Faculdade de Gestão</span>
+                                            href="{% url 'gestao'%}">
+                                            <span class="sidebar-menu-text">Faculdade de Ciências Socias e Humanas</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
-                                           href="{% url 'economia' %}">
-                                            <span class="sidebar-menu-text">Faculdade de Economia</span>
+                                            href="{% url 'economia'%}">
+                                            <span class="sidebar-menu-text">Faculdade de Ciências Economicas</span>
                                         </a>
                                     </li>
-                                  
+                                    
 
-                                   <!--  <li class="sidebar-menu-item">
+                                    <!--  <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
-                                           href="staff.html">
+                                            href="staff.html">
                                             <span class="sidebar-menu-text">Staff</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button"
-                                           href="leaves.html">
+                                            href="leaves.html">
                                             <span class="sidebar-menu-text">Leaves</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a class="sidebar-menu-button disabled"
-                                           href="departments.html">
+                                            href="departments.html">
                                             <span class="sidebar-menu-text">Departments</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="documents.html">
-    <span class="sidebar-menu-text">Documents</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="attendance.html">
-    <span class="sidebar-menu-text">Attendance</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="recruitment.html">
-    <span class="sidebar-menu-text">Recruitment</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="payroll.html">
-    <span class="sidebar-menu-text">Payroll</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="training.html">
-    <span class="sidebar-menu-text">Training</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="employee-profile.html">
-    <span class="sidebar-menu-text">Employee Profile</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="accounting.html">
-    <span class="sidebar-menu-text">Accounting</span>
-  </a>
-</li>
-<li class="sidebar-menu-item">
-  <a class="sidebar-menu-button disabled" href="inventory.html">
-    <span class="sidebar-menu-text">Inventory</span>
-  </a>
-</li> -->
-                                </ul>
+                                        <a class="sidebar-menu-button disabled" href="documents.html">
+                                        <span class="sidebar-menu-text">Documents</span>
+                                        </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="attendance.html">
+                                        <span class="sidebar-menu-text">Attendance</span>
+                                        </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="recruitment.html">
+                                        <span class="sidebar-menu-text">Recruitment</span>
+                                        </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="payroll.html">
+                                        <span class="sidebar-menu-text">Payroll</span>
+                                        </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="training.html">
+                                        <span class="sidebar-menu-text">Training</span>
+                                        </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="employee-profile.html">
+                                        <span class="sidebar-menu-text">Employee Profile</span>
+                                        </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="accounting.html">
+                                        <span class="sidebar-menu-text">Accounting</span>
+                                        </a>
+                                        </li>
+                                        <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="inventory.html">
+                                        <span class="sidebar-menu-text">Inventory</span>
+                                        </a>
+                                        </li> -->
                                 
-                             <!--<li class="sidebar-menu-item">
+                                
+                                <!--<li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-path.html">
+                                    href="student-path.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">change_history</span>
                                     <span class="sidebar-menu-text">Path Details</span>
                                 </a>
                             </li>
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-course.html">
+                                    href="student-course.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">face</span>
                                     <span class="sidebar-menu-text">Course Preview</span>
                                 </a>
                             </li>
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-lesson.html">
+                                    href="student-lesson.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">panorama_fish_eye</span>
                                     <span class="sidebar-menu-text">Lesson Preview</span>
                                 </a>
                             </li>
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-take-course.html">
+                                    href="student-take-course.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">class</span>
                                     <span class="sidebar-menu-text">Take Course</span>
                                     <span class="sidebar-menu-badge badge badge-accent badge-notifications ml-auto">PRO</span>
@@ -1557,51 +1554,51 @@
                             </li>
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-take-lesson.html">
+                                    href="student-take-lesson.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">import_contacts</span>
                                     <span class="sidebar-menu-text">Take Lesson</span>
                                 </a>
                             </li>
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-take-quiz.html">
+                                    href="student-take-quiz.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">dvr</span>
                                     <span class="sidebar-menu-text">Take Quiz</span>
                                 </a>
                             </li>
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-quiz-results.html">
+                                    href="student-quiz-results.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">poll</span>
                                     <span class="sidebar-menu-text">My Quizzes</span>
                                 </a>
                             </li>
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-quiz-result-details.html">
+                                    href="student-quiz-result-details.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">live_help</span>
                                     <span class="sidebar-menu-text">Quiz Result</span>
                                 </a>
                             </li>
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-path-assessment.html">
+                                    href="student-path-assessment.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">layers</span>
                                     <span class="sidebar-menu-text">Skill Assessment</span>
                                 </a>
                             </li>
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
-                                   href="student-path-assessment-result.html">
+                                    href="student-path-assessment-result.html">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">assignment_turned_in</span>
                                     <span class="sidebar-menu-text">Skill Result</span>
                                 </a>
-                            </li>
+                            </li> -->
 
-                        </ul>    -->  
+                        </ul>   
                         <li class="sidebar-menu-item">
                             <a class="sidebar-menu-button"
-                               href="student-dashboard.html">
+                                href="#">
                                 <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_box</span>
                                 <span class="sidebar-menu-text">Galeria</span>
                             </a>

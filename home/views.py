@@ -7,7 +7,7 @@ from django.contrib import messages
 import os
 from django.shortcuts import get_object_or_404
 from users.models import Artigo, Perfil, Monografia, Tese, Livro, Dissertacao
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -17,6 +17,7 @@ def home(request):
     
     return render(request,'home/index.html', {'artigos': artigos})
 
+@login_required
 def artigo_list(request):
     try:
        #perfil = Perfil.objects.get(user=request.user)
@@ -32,6 +33,7 @@ def artigo_list(request):
 
     return render(request, 'home/artigo_list.html', context)
 
+@login_required
 def artigo(request, pk ):
     #autor = get_object_or_404(Perfil, id=autor_id)
     #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
@@ -40,6 +42,7 @@ def artigo(request, pk ):
   
    return render(request, 'home/artigos.html', {'artigo': artigo})
 
+@login_required
 def monografia_view(request, pk ):
     #autor = get_object_or_404(Perfil, id=autor_id)
     #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
@@ -48,6 +51,7 @@ def monografia_view(request, pk ):
   
    return render(request, 'home/monografia_view.html', {'monografia': monografia})
 
+@login_required
 def tese_view(request, pk ):
     #autor = get_object_or_404(Perfil, id=autor_id)
     #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
@@ -56,6 +60,7 @@ def tese_view(request, pk ):
   
    return render(request, 'home/tese_view.html', {'tese': tese})
 
+@login_required
 def livro_view(request, pk ):
     #autor = get_object_or_404(Perfil, id=autor_id)
     #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
@@ -64,6 +69,7 @@ def livro_view(request, pk ):
   
    return render(request, 'home/livro_view.html', {'livro': livro})
 
+@login_required
 def dissertacao_view(request, pk ):
     #autor = get_object_or_404(Perfil, id=autor_id)
     #artigo = get_object_or_404(Artigo, id=artigo_id, autor=autor)
@@ -72,6 +78,7 @@ def dissertacao_view(request, pk ):
   
    return render(request, 'home/dissertacao_view.html', {'dissertacao': dissertacao})
 
+@login_required
 def monografias(request):
     try:
         #perfil = Perfil.objects.get(user=request.user)
@@ -86,7 +93,7 @@ def monografias(request):
         return redirect('home')  
     
     return render(request, 'home/monografias.html', context)
-
+@login_required
 def livro(request):
     try:
         #perfil = Perfil.objects.get(user=request.user)
@@ -102,6 +109,7 @@ def livro(request):
     
     return render(request, 'home/livro.html', context)
 
+@login_required
 def dissertacao(request):
     try:
         #perfil = Perfil.objects.get(user=request.user)
@@ -117,6 +125,7 @@ def dissertacao(request):
     
     return render(request, 'home/dissertacao.html', context)
 
+@login_required
 def tese(request):
     try:
        # perfil = Perfil.objects.get(user=request.user)
@@ -132,6 +141,7 @@ def tese(request):
     
     return render(request, 'home/tese.html', context)
 
+@login_required
 def faculdade_direito(request):
     try:
        # perfil = Perfil.objects.get(user=request.user)
@@ -158,6 +168,7 @@ def faculdade_direito(request):
 
     return render(request,'home/faculdade_direito.html', context)
 
+@login_required
 def faculdade_engenharia(request):
 
     try:
@@ -184,6 +195,7 @@ def faculdade_engenharia(request):
     
     return render(request,'home/faculdade_engenharia.html', context)
 
+@login_required
 def faculdade_economia(request):
     try:
   
@@ -209,6 +221,7 @@ def faculdade_economia(request):
 
     return render(request,'home/faculdade_economia.html', context)
 
+@login_required
 def faculdade_gestao(request):
     try:
     
@@ -234,6 +247,7 @@ def faculdade_gestao(request):
 
     return render(request,'home/faculdade_gestao.html', context)
 
+@login_required
 def serve_pdf(request, filename):
     filepath = os.path.join('media/pdfs', filename)
     return FileResponse(open(filepath, 'rb'), content_type='application/pdf')

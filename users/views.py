@@ -47,8 +47,6 @@ def edit_perfil(request):
         messages.error(request, "Você ainda não tem um perfil. Crie um primeiro.")
         return redirect('home')  # or redirect to a create-perfil page
 
-   
-
 @login_required
 def perfil(request):
     try:
@@ -72,7 +70,7 @@ def perfil(request):
 
     return render(request, 'users/perfil.html', context)
 
-
+@login_required
 def monografia(request):
     if request.method == 'POST':
         form = MonografiaForm(request.POST, request.FILES)
@@ -103,6 +101,7 @@ def monografia(request):
         form = MonografiaForm()
     return render(request, 'users/monografia_form.html', {'form': form})
 
+@login_required
 def tese(request):
     if request.method == 'POST':
         form = TeseForm(request.POST, request.FILES)
@@ -133,6 +132,7 @@ def tese(request):
         form = TeseForm()
     return render(request, 'users/tese_form.html', {'form': form})
 
+@login_required
 def dissertacao(request):
     if request.method == 'POST':
         form = DissertacaoForm(request.POST, request.FILES)
@@ -163,6 +163,7 @@ def dissertacao(request):
         form = DissertacaoForm()
     return render(request, 'users/dissertacao_form.html', {'form': form})
 
+@login_required
 def artigo(request):
     if request.method == 'POST':
         form = ArtigoForm(request.POST, request.FILES)
@@ -193,6 +194,7 @@ def artigo(request):
         form = ArtigoForm()
     return render(request, 'users/artigo_form.html', {'form': form})
 
+@login_required
 def livro(request):
     if request.method == 'POST':
         form = LivroForm(request.POST, request.FILES)
